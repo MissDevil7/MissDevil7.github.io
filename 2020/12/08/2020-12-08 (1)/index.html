@@ -132,7 +132,159 @@
 <h1 id="04-浮动的特性"><a href="#04-浮动的特性" class="headerlink" title="04.浮动的特性"></a>04.浮动的特性</h1><h2 id="1）脱标"><a href="#1）脱标" class="headerlink" title="1）脱标"></a>1）脱标</h2><p>脱离标准普通流的控制（浮）移动到指定位置（动），俗称脱标。<br>浮动的盒子<strong>不再保留原来的位置，空出来的位置由其他元素填满</strong>。</p>
 <h2 id="2）一行内显示并且顶端对齐排列"><a href="#2）一行内显示并且顶端对齐排列" class="headerlink" title="2）一行内显示并且顶端对齐排列"></a>2）一行内显示并且顶端对齐排列</h2><p>如果多个盒子都设置了浮动，则它们会按照属性值一行内显示并且顶端对齐排列。<br>浮动的元素是互相贴靠在一起的（不会有缝隙），如果父级宽度装不下这些浮动的盒子，多出来的盒子会拉起一行对齐。</p>
 <h2 id="3）行内块元素的特性"><a href="#3）行内块元素的特性" class="headerlink" title="3）行内块元素的特性"></a>3）行内块元素的特性</h2><p>任何元素都可以浮动，不管原先是什么模式的元素，添加浮动之后具有行内块元素相似的特性。<br>因此：<br>①如果行内元素转换为了浮动，则就不需要转换为行内块元素来设置宽高了；<br>②如果块级盒子没有设置宽度，默认宽度和父级一样宽，但是添加浮动后，它的大小更据内容来决定。</p>
-<h1 id="05-搭配标准流的父元素"><a href="#05-搭配标准流的父元素" class="headerlink" title="05.搭配标准流的父元素"></a>05.搭配标准流的父元素</h1><p>浮动元素经常和标准流的父级搭配使用：<br>为了约束浮动元素的位置，我们网页布局一般采取的策略是：<br>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置。<br><img src="https://img-blog.csdnimg.cn/20201208202900833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>练习模板</strong><br>①<br><img src="https://img-blog.csdnimg.cn/20201208203229489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="无间隙的浮动盒子"><br>②<br><img src="https://img-blog.csdnimg.cn/2020120821050881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>③<img src="https://img-blog.csdnimg.cn/2020120821081585.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="05-搭配标准流的父元素"><a href="#05-搭配标准流的父元素" class="headerlink" title="05.搭配标准流的父元素"></a>05.搭配标准流的父元素</h1><p>浮动元素经常和标准流的父级搭配使用：<br>为了约束浮动元素的位置，我们网页布局一般采取的策略是：<br>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置。<br><img src="https://img-blog.csdnimg.cn/20201208202900833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>练习模板</strong><br>①<br><img src="https://img-blog.csdnimg.cn/20201208203229489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="无间隙的浮动盒子"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, inital-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;练习1&lt;/title&gt;
+    &lt;style&gt;
+        .box &#123;
+            width: 1200px;
+            height: 460px;
+            background-color: pink;
+            margin: 0 auto;
+        &#125;
+
+        .left &#123;
+            float: left;
+            width: 230px;
+            height: 460px;
+            background-color: purple;
+        &#125;
+
+        .right &#123;
+            float: right;
+            width: 970px;
+            height: 460px;
+            background-color: skyblue;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>②<br><img src="https://img-blog.csdnimg.cn/2020120821050881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;练习2&lt;/title&gt;
+    &lt;style&gt;
+        /* 当有ul和li时，需要先把所有的初始间隙都清楚掉 */
+        * &#123;
+            margin: 0;
+            padding: 0;
+        &#125;
+
+        /* 去掉小圆点 */
+        li &#123;
+            list-style: none;
+        &#125;
+
+        .box &#123;
+            height: 285px;
+            width: 1226px;
+            background-color: pink;
+            margin: 0 auto;
+        &#125;
+
+        .box li &#123;
+            float: left;
+            /* 给每一个浮动li设置一个右边距即可 */
+            margin-right: 14px;
+            height: 285px;
+            width: 296px;
+            background-color: purple;
+        &#125;
+
+        .box .last &#123;
+            /* 最后一个li不需要设置右边距 */
+            margin-right: 0px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ul class=&quot;box&quot;&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li class=&quot;last&quot;&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>③<img src="https://img-blog.csdnimg.cn/2020120821081585.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;练习3&lt;/title&gt;
+    &lt;style&gt;
+        .box &#123;
+            width: 1226px;
+            height: 615px;
+            background-color: pink;
+            margin: 0 auto;
+        &#125;
+
+        .left &#123;
+            float: left;
+            width: 234px;
+            height: 615px;
+            background-color: purple;
+        &#125;
+
+        .right &#123;
+            float: left;
+            width: 992px;
+            height: 615px;
+            background-color: #bbb;
+        &#125;
+
+        .box .right&gt;div &#123;
+            float: left;
+            margin-left: 14px;
+            margin-bottom: 14px;
+            width: 234px;
+            height: 300px;
+            background-color: #aaa;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;
+            &lt;div&gt;1&lt;/div&gt;
+            &lt;div&gt;2&lt;/div&gt;
+            &lt;div&gt;3&lt;/div&gt;
+            &lt;div&gt;4&lt;/div&gt;
+            &lt;div&gt;5&lt;/div&gt;
+            &lt;div&gt;6&lt;/div&gt;
+            &lt;div&gt;7&lt;/div&gt;
+            &lt;div&gt;8&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
 <h1 id="06-浮动的注意事项"><a href="#06-浮动的注意事项" class="headerlink" title="06.浮动的注意事项"></a>06.浮动的注意事项</h1><p>1、浮动和标准流的父盒子排列上下位置，之后内部子元素采取浮动排列左右位置</p>
 <p>2、一个元素浮动了，理论上其余的兄弟也必须浮动</p>
 <p>3、浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流</p>
@@ -147,9 +299,233 @@
 <p>清除浮动的策略是：<strong>闭合浮动</strong></p>
 <p>5、清除浮动的方法是：<br>①<strong>额外标签法</strong>：也称隔墙法。是W3C推荐的方法。<br>②<strong>父级添加 overflow 属性</strong><br>③<strong>父级添加 after 伪元素</strong><br>④<strong>父级添加双伪元素</strong></p>
 <h3 id="①额外标签法"><a href="#①额外标签法" class="headerlink" title="①额外标签法"></a>①额外标签法</h3><p>会在浮动元素末尾添加一个空的标签，例如<div style = "clear:both"></div><br>①找到一个大box中最后的浮动盒子<br>②在它后面加一个空的块级元素（如div，不能是行内元素），CSS中将这个盒子clear<br>缺点：添加了许多无意义的标签，结构化较差</p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+       .box &#123;
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        &#125;
+
+        .f1 &#123;
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        &#125;
+
+        .f2 &#123;
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+
+        .footer &#123;
+            height: 10px;
+            background-color: #bbb;
+        &#125;
+
+        /* 清除浮动 */
+         .clear &#123;
+            clear: both;
+        &#125;  
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;f1&quot;&gt;float1&lt;/div&gt;
+        &lt;div class=&quot;f2&quot;&gt;float2&lt;/div&gt;
+        &lt;!-- 清除浮动 --&gt;
+        &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
 <h3 id="②父级添加overflow"><a href="#②父级添加overflow" class="headerlink" title="②父级添加overflow"></a>②父级添加overflow</h3><p>给父级元素添加overflow属性，将其属性值设置为hidden、auto或scroll<br>（外边距合并也是用这个来解决的）<br>缺点，无法显示溢出部分<br><img src="https://img-blog.csdnimg.cn/20201208205740518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+       .box &#123;
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        &#125;
+
+        .f1 &#123;
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        &#125;
+
+        .f2 &#123;
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+
+        .footer &#123;
+            height: 10px;
+            background-color: #bbb;
+        &#125;
+
+            /* 清除浮动 */
+         .box &#123;
+            overflow: hidden;
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        &#125; 
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;f1&quot;&gt;float1&lt;/div&gt;
+        &lt;div class=&quot;f2&quot;&gt;float2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
 <h3 id="③父级添加-after-伪元素"><a href="#③父级添加-after-伪元素" class="headerlink" title="③父级添加 after 伪元素"></a>③父级添加 after 伪元素</h3><p>可以算是额外添加法的升级版。<br>也是给父级元素添加。<br>缺点：要照顾高版本的浏览器。<br><img src="https://img-blog.csdnimg.cn/20201208205841544.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3 id="④父级添加双伪元素"><a href="#④父级添加双伪元素" class="headerlink" title="④父级添加双伪元素"></a>④父级添加双伪元素</h3><p>也是给父元素添加，直接粘贴即可（也很常用）。<br><img src="https://img-blog.csdnimg.cn/20201208210204601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>总结：</strong><br><img src="https://img-blog.csdnimg.cn/20201208210311220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt; 
+
+       .clearfix::after &#123;
+            content: &quot;&quot;;
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        &#125;
+
+        .clearfix &#123;
+            /* IE6、7专有 */
+            *zoom: 1;
+        &#125;
+       .box &#123;
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        &#125;
+
+        .f1 &#123;
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        &#125;
+
+        .f2 &#123;
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+
+        .footer &#123;
+            height: 10px;
+            background-color: #bbb;
+        &#125;
+
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box clearfix&quot;&gt;
+        &lt;div class=&quot;f1&quot;&gt;float1&lt;/div&gt;
+        &lt;div class=&quot;f2&quot;&gt;float2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h3 id="④父级添加双伪元素"><a href="#④父级添加双伪元素" class="headerlink" title="④父级添加双伪元素"></a>④父级添加双伪元素</h3><p>也是给父元素添加，直接粘贴即可（也很常用）。<br><img src="https://img-blog.csdnimg.cn/20201208210204601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt; 
+
+    .clearfix:before,
+        .clearfix:after &#123;
+            content: &quot;&quot;;
+            display: table;
+        &#125;
+
+        .clearfix:after &#123;
+            clear: both
+        &#125;
+
+        .clearfix &#123;
+            *zoom: 1;
+        &#125;
+
+       .box &#123;
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        &#125;
+
+        .f1 &#123;
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        &#125;
+
+        .f2 &#123;
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+
+        .footer &#123;
+            height: 10px;
+            background-color: #bbb;
+        &#125;
+
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box clearfix&quot;&gt;
+        &lt;div class=&quot;f1&quot;&gt;float1&lt;/div&gt;
+        &lt;div class=&quot;f2&quot;&gt;float2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p><strong>总结：</strong><br><img src="https://img-blog.csdnimg.cn/20201208210311220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
   
     </div> 
 
