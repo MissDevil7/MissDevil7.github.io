@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Devil">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Page Title -->
+    
+        <title>CSS定位 | Miss.Devil&#39;s hexo</title>
+    
+    <link rel="icon" href="/img/avatar-default.png">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+<script src="/js/script.js"></script>
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <style>
+        .deactiveColor{
+            color: #37474f;
+        }
+        .activeColor{
+            color: #006064;
+        }
+        a:hover{
+            color: #006064;
+        }
+        .header-btn{
+            color: #37474f;
+        }
+        
+        .post-content img{
+            margin: 50px auto;
+        }
+        
+    </style>
+<meta name="generator" content="Hexo 5.2.0"></head>
+    <body>
+        <div class="container">
+
+            <!-- Top Anchor -->
+            <div id="top"></div>
+
+            <!-- Header -->
+            <header class="header-wrapper">
+    <div class="header-title-wrapper">
+        <!-- Page Title -->
+        <p class="header-title">
+             
+                
+                    CSS定位
+                
+            
+        </p>  
+    </div>    
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+    
+    <div class="header-detail">
+        <!-- Header Button -->
+        <div class="header-btn-wrapper">
+            
+                <span>
+                    <a class="home-btn header-btn" href="/" title="homepage"><i class="fa fa-home"></i></a>
+                </span>
+
+                
+                    <span>
+                        <a class="catalog-btn header-btn"><i class="fa fa-list-ul"></i></a>
+                    </span>
+                
+            
+        </div>
+    </div>
+</header>
+
+            <!-- Main -->
+            <main>
+                <article class="post-wrapper">
+    
+
+    
+        <!-- Article Catalog -->
+        <div class="catalog-dropdown col-xs-12 col-sm-12">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.</span> <span class="toc-text">1、为什么需要定位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text">2、定位的组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81%E5%AE%9A%E4%BD%8D%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text">3、定位的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%BC%89%E9%9D%99%E6%80%81%E5%AE%9A%E4%BD%8D"><span class="toc-number">3.1.</span> <span class="toc-text">1）静态定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%EF%BC%89%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8Drelative"><span class="toc-number">3.2.</span> <span class="toc-text">2）相对定位relative</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%EF%BC%89%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8Dabsolute"><span class="toc-number">3.3.</span> <span class="toc-text">3）绝对定位absolute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%EF%BC%89%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8Dfixed"><span class="toc-number">3.4.</span> <span class="toc-text">4）固定定位fixed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%EF%BC%89%E7%B2%98%E6%80%A7%E5%AE%9A%E4%BD%8Dsticky"><span class="toc-number">3.5.</span> <span class="toc-text">5）粘性定位sticky</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81%E6%8B%93%E5%B1%95"><span class="toc-number">4.</span> <span class="toc-text">4、拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%BC%89%E5%AE%9A%E4%BD%8D%E7%9A%84%E5%8F%A0%E6%94%BE%E6%AC%A1%E5%BA%8F-z-index"><span class="toc-number">4.1.</span> <span class="toc-text">1）定位的叠放次序 z-index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%EF%BC%89%E5%AD%90%E7%BB%9D%E7%88%B6%E7%9B%B8"><span class="toc-number">4.2.</span> <span class="toc-text">2）子绝父相</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%EF%BC%89%E7%BB%9D%E5%AF%B9-%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%9B%92%E5%AD%90%E5%B1%85%E4%B8%AD"><span class="toc-number">4.3.</span> <span class="toc-text">3）绝对&#x2F;固定定位的盒子居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%EF%BC%89%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%89%B9%E6%AE%8A%E7%89%B9%E6%80%A7"><span class="toc-number">4.4.</span> <span class="toc-text">4）定位的特殊特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">5、定位的总结</span></a></li></ol>
+        </div>
+    
+
+    
+        <!--For now, Lightbox Only Show in Post Layout -->
+        
+
+        
+        
+            <!-- Article Img Lightbox -->
+            <div class="gallery">
+    
+    
+    <div class="lightbox">
+        <!-- Close Button -->
+        <span class="close-gallery">&times;</span>
+        
+        <!-- Photo -->
+        <img class="gallery-photo">
+    </div>
+</div>
+        
+    
+
+    
+
+    <!-- Article Content -->
+    <div class="post-content">
+        <h1 id="1、为什么需要定位"><a href="#1、为什么需要定位" class="headerlink" title="1、为什么需要定位"></a>1、为什么需要定位</h1><p>1、实现使用标准流/浮动也很难实现的场景：<br>某个元素可以自由的在一个盒子内移动位置，并且压住其他盒子、以及无论如何移动滚轮，页面中都有一部分内容会固定显示在屏幕上。</p>
+<p>2、所以：<br>①浮动可以让多个块级盒子一行没有缝隙排列显示，经常用于横向排列盒子。<br>②定位则是可以让盒子自由的在某个盒子内部移动位置或者固定屏幕中某个位置，并且可以压住其他盒子</p>
+<h1 id="2、定位的组成"><a href="#2、定位的组成" class="headerlink" title="2、定位的组成"></a>2、定位的组成</h1><p>1、定位：将盒子定在某一位置，所以定位也是在拜访盒子，按照定位的方式移动盒子</p>
+<p>2、定位=定位模式+边偏移<br>定位模式用于指定一个元素文档中的定位方式。<br>边偏移则决定了该元素的最终位置。</p>
+<p>3、定位模式：决定元素的定位方式，通过CSS的position属性来设置，其值可以分为4个：<br><img src="https://img-blog.csdnimg.cn/20201227191648305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>4、边偏移：就是定位盒子移动到最终位置。（类似padding）<br>有top、bottom、left、right共4个属性：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201227191810438.png" alt="在这里插入图片描述"></p>
+<h1 id="3、定位的分类"><a href="#3、定位的分类" class="headerlink" title="3、定位的分类"></a>3、定位的分类</h1><h2 id="1）静态定位"><a href="#1）静态定位" class="headerlink" title="1）静态定位"></a>1）静态定位</h2><p>元素默认的定位方式，无定位的意思。<br>语法：</p>
+<pre><code class="css">选择器 &#123;position: static;&#125;</code></pre>
+<p>注意：静态定位按照标准流特性摆放位置，它没有边偏移（可以认为静态定位就是标准流，很少用到）</p>
+<h2 id="2）相对定位relative"><a href="#2）相对定位relative" class="headerlink" title="2）相对定位relative"></a>2）相对定位relative</h2><p>相对定位是元素在移动位置的时候，是相对于它原来的位置而言的<br>语法：==选择器 {positoin: relative; }==<br>eg：</p>
+<pre><code class="css">        .box &#123;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        &#125;
+</code></pre>
+<p>特点：<br>①相对于自己原来的位置来移动的（移动位置的时候参照点是自己原来的位置）<br>②原来在标准流的位置继续占有，后面的盒子仍然以标准流的方式对待它。（不脱标，继续保留原来的位置）<br>③因此相对定位没有脱标，它最典型的应用是子绝父相。</p>
+<p>eg：<br><img src="https://img-blog.csdnimg.cn/20201227194935623.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, inital-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;相对定位&lt;/title&gt;
+    &lt;style&gt;
+
+        .box1 &#123;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+
+        .box2 &#123;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;
+
+    &lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;
+
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h2 id="3）绝对定位absolute"><a href="#3）绝对定位absolute" class="headerlink" title="3）绝对定位absolute"></a>3）绝对定位absolute</h2><p><strong>没有父级或者父级无定位的情况、父级有定位的情况、绝对定位脱标的不占有原来位置。</strong></p>
+<p>1、绝对定位是元素在移动位置的时候，相对于它祖先元素来说的。</p>
+<p>2、语法：==选择器 {position: absolute; }==<br>eg：</p>
+<pre><code class="css">        .box &#123;
+            position: absolute;
+            bottom: 100px;
+            left: 100px;
+        &#125;
+</code></pre>
+<p>3、特点：<br>①如果没有祖先元素，或者祖先元素没有定位，则以浏览器为准定位（document文档）。<br>②如果父级有定位的情况（相对、绝对、固定定位），则以最近一级的有定位祖先元素为参考点移动位置（如果爸爸没定位，爷爷有定位，那就以爷爷为准）。<br>③绝对定位不会占有位置，脱标，飘地比浮动定位还要高。</p>
+<p>eg：<br><img src="https://img-blog.csdnimg.cn/20201227195242544.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, inital-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;绝对定位&lt;/title&gt;
+    &lt;style&gt;
+
+        .grandfather &#123;
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: cadetblue;
+            padding: 50px;
+        &#125;
+
+        .father &#123;
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+
+        &#125;
+
+        .son1 &#123;
+            /* position: absolute;
+            top: 30px;
+            left: 30px; */
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        &#125;
+
+        .son2 &#123;
+            width: 150px;
+            height: 150px;
+            background-color: darkorange;
+        &#125;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;grandfather&quot;&gt;
+
+        &lt;div class=&quot;father&quot;&gt;
+
+            &lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;
+
+            &lt;div class=&quot;son2&quot;&gt;son2&lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h2 id="4）固定定位fixed"><a href="#4）固定定位fixed" class="headerlink" title="4）固定定位fixed"></a>4）固定定位fixed</h2><p>1、固定定位是元素固定于浏览器可视区的位置。主要使用场景：可以在浏览器页面滚动时元素的位置不会改变。</p>
+<p>语法：==选择器 {position: fixed; }==</p>
+<p>2、特点：<br>①以浏览器的可视窗口为参照点移动元素<br>（和父元素没有任何关系、不随滚条滚动而滚动）<br>注意窗口化之后也会按照可视窗口来变化<br>②固定定位不再占有原来的位置，脱标的（可以看做是一种特殊的绝对定位）</p>
+<p>eg：<br><img src="https://img-blog.csdnimg.cn/20201227195841163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;固定定位小技巧&lt;/title&gt;
+
+    &lt;style&gt;
+
+        .box1&#123;
+            width: 600px;
+            height: 2000px;
+            background-color: dodgerblue;
+            margin: 0 auto;
+        &#125;
+
+        .box2&#123;
+            /* 固定盒子到紧贴版心右侧 */
+            position: fixed;
+            top: 500px;
+            left: 50%;
+            margin-left: 305px;
+            width: 50px;
+            height: 50px;
+            background-color:lightblue;
+        &#125;
+
+    &lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;box1&quot;&gt;版心&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h2 id="5）粘性定位sticky"><a href="#5）粘性定位sticky" class="headerlink" title="5）粘性定位sticky"></a>5）粘性定位sticky</h2><p>1、粘性定位可以认为是相对定位和固定定位的混合。<br>2、使用场景（京东的右边栏，一开始在右下角，当滚轮下移，固定在了右上角）</p>
+<p>3、语法、特点：<br><img src="https://img-blog.csdnimg.cn/20201227193352878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>eg：<br><img src="https://img-blog.csdnimg.cn/20201227200058222.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;粘性定位（固定定位和相对定位混合）&lt;/title&gt;
+
+    &lt;style&gt;
+
+        body&#123;
+            height: 3000px;
+        &#125;
+
+        .nav&#123;
+            position: sticky;
+            top: 0px;
+            width: 600px;
+            height: 50px;
+            background-color: lightcoral;
+            margin: 100px auto;
+        &#125;
+
+    &lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;nav&quot;&gt;导航栏&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h1 id="4、拓展"><a href="#4、拓展" class="headerlink" title="4、拓展"></a>4、拓展</h1><h2 id="1）定位的叠放次序-z-index"><a href="#1）定位的叠放次序-z-index" class="headerlink" title="1）定位的叠放次序 z-index"></a>1）定位的叠放次序 z-index</h2><p>1、在使用定位布局时，可能会出现盒子重叠的情况，此时，可以使用z-index来控制盒子的前后次序（z轴）</p>
+<p>2、语法：选择器 { z-index: 1; }<br>数值可以是正整数，负整数或0.默认是auto，数值越大，盒子越高<br>如果数值相同，则按照书写顺序，后来者居上<br>数字后面不能家单位<br><strong>只有定位的盒子才有z-index属性！！！！！！！</strong></p>
+<p>eg：<br><img src="https://img-blog.csdnimg.cn/20201227200904818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;定位的叠放次序（z-index）&lt;/title&gt;
+
+    &lt;style&gt;
+
+        .box &#123;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 200px;
+        &#125;
+
+        .no1 &#123;
+            background-color: lightcoral;
+            z-index: 1;
+        &#125;
+
+        .no2 &#123;
+            background-color: lightgreen;
+            top: 50px;
+            left: 50px;
+            z-index: 2;
+        &#125;
+
+        .no3 &#123;
+            background-color: lightblue;
+            top: 100px;
+            left: 100px;
+        &#125;
+
+    &lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;box no1&quot;&gt;box1&lt;/div&gt;
+    &lt;div class=&quot;box no2&quot;&gt;box2&lt;/div&gt;
+    &lt;div class=&quot;box no3&quot;&gt;box3&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h2 id="2）子绝父相"><a href="#2）子绝父相" class="headerlink" title="2）子绝父相"></a>2）子绝父相</h2><p><img src="https://img-blog.csdnimg.cn/20201227193806710.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>eg：<br><img src="https://img-blog.csdnimg.cn/20201227200718322.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, inital-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;子绝父相1&lt;/title&gt;
+    &lt;style&gt;
+
+        .father&#123;
+            position: relative;
+            width: 600px;
+            height: 400px;
+            background-color: darkseagreen;
+            margin: 0 auto;
+        &#125;
+
+        .son1&#123;
+            position: absolute;
+            top: 170px;
+            left: 0px;
+            width: 20px;
+            height: 20px;
+            background-color: deepskyblue;
+        &#125;
+
+        .son2&#123;
+            position: absolute;
+            top: 170px;
+            right: 0px;
+            width: 20px;
+            height: 20px;
+            background-color: deepskyblue;
+        &#125;
+
+        .son3&#123;
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            width: 120px;
+            height: 30px;
+            background-color: dodgerblue;
+        &#125;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;father&quot;&gt;
+
+        &lt;div class=&quot;son1&quot;&gt;&lt;/div&gt;
+
+        &lt;div class=&quot;son2&quot;&gt;&lt;/div&gt;
+
+        &lt;div class=&quot;son3&quot;&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h2 id="3）绝对-固定定位的盒子居中"><a href="#3）绝对-固定定位的盒子居中" class="headerlink" title="3）绝对/固定定位的盒子居中"></a>3）绝对/固定定位的盒子居中</h2><pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;绝对/固定定位的盒子居中&lt;/title&gt;
+
+    &lt;style&gt;
+
+        .box &#123;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            top: 50%;
+            margin-top: -100px;
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            /* 加了绝对定位的&quot;margin: 0 auto;&quot;盒子无法居中 */
+            /* margin: 0 auto; */
+        &#125;
+
+    &lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h2 id="4）定位的特殊特性"><a href="#4）定位的特殊特性" class="headerlink" title="4）定位的特殊特性"></a>4）定位的特殊特性</h2><p><strong>行内元素添加绝对或固定定位可以直接设置高度和宽度</strong><br>eg：</p>
+<pre><code class="css">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;行内元素添加绝对或固定定位可以直接设置高度和宽度&lt;/title&gt;
+
+    &lt;style&gt;
+
+        span &#123;
+            position: absolute;
+            background-color: lightblue;
+
+        &#125;
+
+    &lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;span&gt;123&lt;/span&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h1 id="5、定位的总结"><a href="#5、定位的总结" class="headerlink" title="5、定位的总结"></a>5、定位的总结</h1><p><img src="https://img-blog.csdnimg.cn/20201227193513768.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+  
+    </div> 
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+
+    <div class="post-info-wrapper">
+            
+                    <!-- Post Info -->
+                    <p class="post-date">2020-12-27</p>
+                    
+                    
+                        <p class="post-info-categories">
+                            
+                        </p>
+                    
+
+                    
+            
+    </div>
+</article>
+
+
+    
+
+            </main>
+
+            <!-- 'To Top' Btn-->
+            
+                <div id="to-top">
+    <a href="#top" class="toTop">
+        <i class="fa fa-pagelines"></i>
+    </a>
+</div>
+            
+
+            <!-- Footer -->
+            
+                <footer class="footer-wrapper col-xs-12 col-sm-12">
+    <div class="footer-banner-wrapper">
+        <p class="footer-banner">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/" title="Hexo">Hexo</a></p>
+        <P class="footer-banner">Theme <a target="_blank" rel="noopener" href="https://github.com/Lonezj/hexo-theme-wind" title="Wind">wind</a></P>
+    </div>
+</footer>
+            
+        </div>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="/css/google-prettify-monokai.css" type="text/css">
+        <script src="//cdn.bootcss.com/prettify/r298/prettify.min.js" type="text/javascript"></script>
+    </body>
+</html>
