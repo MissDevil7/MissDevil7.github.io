@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Devil">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Page Title -->
+    
+        <title> | Miss.Devil&#39;s hexo</title>
+    
+    <link rel="icon" href="/img/avatar-default.png">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+<script src="/js/script.js"></script>
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <style>
+        .deactiveColor{
+            color: #37474f;
+        }
+        .activeColor{
+            color: #006064;
+        }
+        a:hover{
+            color: #006064;
+        }
+        .header-btn{
+            color: #37474f;
+        }
+        
+        .post-content img{
+            margin: 50px auto;
+        }
+        
+    </style>
+<meta name="generator" content="Hexo 5.2.0"></head>
+    <body>
+        <div class="container">
+
+            <!-- Top Anchor -->
+            <div id="top"></div>
+
+            <!-- Header -->
+            <header class="header-wrapper">
+    <div class="header-title-wrapper">
+        <!-- Page Title -->
+        <p class="header-title">
+             
+                
+                    Untitled
+                
+            
+        </p>  
+    </div>    
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+    
+    <div class="header-detail">
+        <!-- Header Button -->
+        <div class="header-btn-wrapper">
+            
+                <span>
+                    <a class="home-btn header-btn" href="/" title="homepage"><i class="fa fa-home"></i></a>
+                </span>
+
+                
+                    <span>
+                        <a class="catalog-btn header-btn"><i class="fa fa-list-ul"></i></a>
+                    </span>
+                
+            
+        </div>
+    </div>
+</header>
+
+            <!-- Main -->
+            <main>
+                <article class="post-wrapper">
+    
+
+    
+        <!-- Article Catalog -->
+        <div class="catalog-dropdown col-xs-12 col-sm-12">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E5%AD%97%E7%AC%A6%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">01. 字符字面量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">02. 字符串的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">03. 字符串的常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.4.</span> <span class="toc-text">04. 转换为字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E6%A8%A1%E6%9D%BF%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text">05. 模板字面量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#06-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8F%92%E5%80%BC"><span class="toc-number">1.6.</span> <span class="toc-text">06. 字符串插值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#07-%E6%A8%A1%E6%9D%BF%E5%AD%97%E9%9D%A2%E9%87%8F%E6%A0%87%E7%AD%BE%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.</span> <span class="toc-text">07. 模板字面量标签函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#08-%E5%8E%9F%E5%A7%8B%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.8.</span> <span class="toc-text">08. 原始字符串</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">二、经典题目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E6%B1%82%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%97%E7%AC%A6%E5%92%8C%E4%B8%AA%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">01.求字符串中出现最多的字符和个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E6%89%BE%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E5%8D%95%E8%AF%8D"><span class="toc-number">2.2.</span> <span class="toc-text">02.找出字符串中最长的单词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8E%BB%E9%87%8D"><span class="toc-number">2.3.</span> <span class="toc-text">03.字符串去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%BF%BB%E8%BD%AC"><span class="toc-number">2.4.</span> <span class="toc-text">04. 字符串的翻转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E5%AE%9E%E7%8E%B0%E5%8D%83%E4%BD%8D%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">2.5.</span> <span class="toc-text">05. 实现千位分隔符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%8B%93%E5%B1%95"><span class="toc-number">3.</span> <span class="toc-text">三、拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB"><span class="toc-number">3.1.</span> <span class="toc-text">01. 字符串与数组的区别与联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">02. 正则表达式</span></a></li></ol></li></ol>
+        </div>
+    
+
+    
+        <!--For now, Lightbox Only Show in Post Layout -->
+        
+
+        
+        
+    
+
+    
+
+    <!-- Article Content -->
+    <div class="post-content">
+        <p>@<a href="String%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">TOC</a></p>
+<h1 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h1><blockquote>
+<p>String（字符串）数据类型表示零或多个16位Unicode字符序列。字符串可以使用双引号（”）、单引号<br>（’）或反引号（`）标示。</p>
+</blockquote>
+<h2 id="01-字符字面量"><a href="#01-字符字面量" class="headerlink" title="01. 字符字面量"></a>01. 字符字面量</h2><p>字符串数据类型包含一些字符字面量，用于表示非打印字符或有其他用途的字符，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>字面量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠（\）</td>
+</tr>
+<tr>
+<td>&#39;</td>
+<td>单引号（’），在字符串以单引号标示时使用，例如’He said, &#39;hey.&#39;‘</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>双引号（”），在字符串以双引号标示时使用，例如”He said, &quot;hey.&quot;“</td>
+</tr>
+<tr>
+<td>`</td>
+<td>反引号（`），在字符串以反引号标示时使用，例如<code>He said, \</code>hey.``</td>
+</tr>
+<tr>
+<td>\xnn</td>
+<td>以十六进制编码nn表示的字符（其中n是十六进制数字0~F），例如\x41等于”A”</td>
+</tr>
+<tr>
+<td>\unnnn</td>
+<td>以十六进制编码nnnn表示的Unicode字符（其中n是十六进制数字0~F），例如\u03a3等于希腊字符”Σ”</td>
+</tr>
+</tbody></table>
+<p>这些字符字面量可以出现在字符串中的任意位置，且可以作为单个字符被解释。</p>
+<h2 id="02-字符串的特点"><a href="#02-字符串的特点" class="headerlink" title="02. 字符串的特点"></a>02. 字符串的特点</h2><p>ECMAScript中的字符串是不可变的（immutable），意思是一旦创建，它们的值就不能变了。要修改某个变量中的字符串值，必须先销毁原始的字符串，然后将包含新值的另一个字符串保存到该变量，<br>如下所示：</p>
+<pre><code class="javascript">let lang = &quot;Java&quot;;
+lang = lang + &quot;Script&quot;;</code></pre>
+<p>这里，变量lang一开始包含字符串”Java”。紧接着，lang被重新定义为包含”Java”和”Script”的组合，也就是”JavaScript”。整个过程首先会分配一个足够容纳10个字符的空间，然后填充上”Java”和”Script”。最后销毁原始的字符串”Java”和字符串”Script”，因为这两个字符串都没有用了。所有处理都是在后台发生的，而这也是一些早期的浏览器（如Firefox 1.0之前的版本和IE6.0）在拼接字符串时非常慢的原因。这些浏览器在后来的版本中都有针对性地解决了这个问题。</p>
+<h2 id="03-字符串的常用方法"><a href="#03-字符串的常用方法" class="headerlink" title="03. 字符串的常用方法"></a>03. 字符串的常用方法</h2><p> <strong>1. indexOf()</strong></p>
+<pre><code class="javascript"> stringObject.indexOf(searchvalue,fromindex)</code></pre>
+<ul>
+<li><p>返回某个指定的字符串值在字符串中首次出现的位置。如果要检索的字符串值没有出现，则该方法返回 -1。</p>
+</li>
+<li><p>*2. lastIndexOf()**</p>
+</li>
+</ul>
+<pre><code class="javascript"> stringObject.lastIndexOf(searchvalue,fromindex)</code></pre>
+<ul>
+<li><p>返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。如果要检索的字符串值没有出现，则该方法返回 -1。</p>
+</li>
+<li><p>*3. charAt()**</p>
+</li>
+</ul>
+<pre><code class="javascript"> stringObject.charAt(searchvalue)</code></pre>
+<ul>
+<li><p>在字符串内检索指定位置的值并返回。</p>
+</li>
+<li><p>*4. match()**</p>
+</li>
+</ul>
+<pre><code class="javascript"> stringObject.match(searchvalue)</code></pre>
+<ul>
+<li><p>在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。找到它返回指定的值，找不到返回null。</p>
+</li>
+<li><p>*5. replace()**</p>
+</li>
+</ul>
+<pre><code class="javascript">stringObject.replace(regexp/substr,replacement)</code></pre>
+<ul>
+<li><p>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。返回值是一个新的字符串。</p>
+</li>
+<li><p>*6. search()**</p>
+</li>
+</ul>
+<pre><code class="javascript">stringObject.search(regexp)</code></pre>
+<ul>
+<li><p>用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。stringObject 中第一个与 regexp 相匹配的子串的起始位置，没有返回-1</p>
+</li>
+<li><p>*7. slice()**</p>
+</li>
+</ul>
+<pre><code class="javascript">stringObject.slice(start,end)</code></pre>
+<ul>
+<li><p>提取字符串的某个部分，并以新的字符串返回被提取的部分。返回一个新的字符串。包括字符串 stringObject 从 start 开始（包括 start）到 end 结束（不包括 end）为止的所有字符。</p>
+</li>
+<li><p>*8. substr()**</p>
+<pre><code class="javascript">stringObject.substr(start,length)</code></pre>
+</li>
+<li><p>方法可在字符串中抽取从 start 下标开始的指定数目的字符。返回一个新的字符串，包含从 stringObject 的 start（包括 start 所指的字符） 处开始的 length 个字符。如果没有指定 length，那么返回的字符串包含从 start 到 stringObject 的结尾的字符。</p>
+</li>
+<li><p>*9. substring()**</p>
+<pre><code class="javascript">stringObject.substring(start,stop)</code></pre>
+</li>
+<li><p>方法用于提取字符串中介于两个指定下标之间的字符。返回一个新的字符串，该字符串值包含 stringObject 的一个子字符串，其内容是从 start 处到 stop-1 处的所有字符，其长度为 stop 减 start。</p>
+</li>
+<li><p>*10. 转小写**</p>
+</li>
+<li><p>toLowerCase()、toLocaleLowerCase() </p>
+</li>
+<li><p>与 toLowerCase() 不同的是，toLocaleLowerCase() 方法按照本地方式把字符串转换为小写。</p>
+</li>
+<li><p>*11. 转大写** </p>
+</li>
+<li><p> toUpperCase()，toLocaleUpperCase()</p>
+</li>
+</ul>
+<p><strong>12. concat()</strong></p>
+<pre><code class="javascript">stringObject.concat(substr)</code></pre>
+<ul>
+<li>用于拼接符串</li>
+</ul>
+<h2 id="04-转换为字符串"><a href="#04-转换为字符串" class="headerlink" title="04. 转换为字符串"></a>04. 转换为字符串</h2><p>有两种方式把一个值转换为字符串。</p>
+<p> <strong>toString()方法</strong></p>
+<p>几乎所有值都有的<strong>toString()方法</strong>。这个方法唯一的用途就是返回当前值的字符串等价物。</p>
+<pre><code class="javascript">let age = 11;
+let ageAsString = age.toString(); // 字符串&quot;11&quot;
+let found = true;
+let foundAsString = found.toString(); // 字符串&quot;true&quot;</code></pre>
+<p>toString()方法可见于数值、布尔值、对象和字符串值。（字符串值也有toString()方法，该方法只是简单地返回自身的一个副本。）null和undefined值没有toString()方法。</p>
+<p>多数情况下，toString()不接收任何参数。不过，在对数值调用这个方法时，toString()可以接收一个底数参数，即以什么底数来输出数值的字符串表示。默认情况下，toString()返回数值的十进制字符串表示。而通过传入参数，可以得到数值的二进制、八进制、十六进制，或者其他任何有效基数的字符串表示。</p>
+<pre><code class="javascript">let num = 10;
+console.log(num.toString()); // &quot;10&quot;
+console.log(num.toString(2)); // &quot;1010&quot;
+console.log(num.toString(8)); // &quot;12&quot;
+console.log(num.toString(10)); // &quot;10&quot;
+console.log(num.toString(16)); // &quot;a&quot;</code></pre>
+<p> <strong>String()转型函数</strong></p>
+<p>如果你不确定一个值是不是null或undefined，可以使用String()转型函数，它始终会返回表示相应类型值的字符串。</p>
+<p>String()函数遵循如下规则。</p>
+<ul>
+<li>如果值有toString()方法，则调用该方法（不传参数）并返回结果。</li>
+<li>如果值是null，返回”null”。</li>
+<li>如果值是undefined，返回”undefined”。</li>
+</ul>
+<pre><code class="javascript">let value1 = 10;
+let value2 = true;
+let value3 = null;
+let value4;
+console.log(String(value1)); // &quot;10&quot;
+console.log(String(value2)); // &quot;true&quot;
+console.log(String(value3)); // &quot;null&quot;
+console.log(String(value4)); // &quot;undefined&quot;</code></pre>
+<h2 id="05-模板字面量"><a href="#05-模板字面量" class="headerlink" title="05. 模板字面量"></a>05. 模板字面量</h2><p>使用模板字面量定义字符串。使用反引号（`）标示，与使用单引号或双引号不同，模板字面量保留换行字符，可以跨行定义字符串：</p>
+<pre><code class="javascript">let myMultiLineString = &#39;first line\nsecond line&#39;;
+let myMultiLineTemplateLiteral = `first line
+second line`;
+console.log(myMultiLineString);
+// first line
+// second line&quot;
+console.log(myMultiLineTemplateLiteral);
+// first line
+// second line
+console.log(myMultiLineString === myMultiLinetemplateLiteral); // true</code></pre>
+<p>顾名思义，模板字面量在定义模板时特别有用。</p>
+<p>由于模板字面量会保持反引号内部的空格，因此在使用时要格外注意。格式正确的模板字符串可能会看起来缩进不当。</p>
+<h2 id="06-字符串插值"><a href="#06-字符串插值" class="headerlink" title="06. 字符串插值"></a>06. 字符串插值</h2><p>模板字面量最常用的一个特性是支持字符串插值，也就是可以在一个连续定义中插入一个或多个值。技术上讲，模板字面量不是字符串，而是一种特殊的JavaScript句法表达式，只不过求值后得到的是字符串。模板字面量在定义时立即求值并转换为字符串实例，任何插入的变量也会从它们最接近的作用域中取值。</p>
+<p>字符串插值通过在${}中使用一个JavaScript表达式实现：</p>
+<pre><code class="javascript">let value = 5;
+let exponent = &#39;second&#39;;
+// 以前，字符串插值是这样实现的：
+let interpolatedString =
+ value + &#39; to the &#39; + exponent + &#39; power is &#39; + (value * value);
+// 现在，可以用模板字面量这样实现：
+let interpolatedTemplateLiteral =
+ `$&#123; value &#125; to the $&#123; exponent &#125; power is $&#123; value * value &#125;`;
+console.log(interpolatedString); // 5 to the second power is 25
+console.log(interpolatedTemplateLiteral); // 5 to the second power is 25</code></pre>
+<ul>
+<li>所有插入的值都会使用toString()强制转型为字符串，而且任何JavaScript表达式都可以用于插值。嵌套的模板字符串无须转义：</li>
+</ul>
+<pre><code class="javascript">console.log(`Hello, $&#123; `World` &#125;!`); // Hello, World!</code></pre>
+<ul>
+<li>将表达式转换为字符串时会调用toString()：</li>
+</ul>
+<pre><code class="javascript">let foo = &#123; toString: () =&gt; &#39;World&#39; &#125;;
+console.log(`Hello, $&#123; foo &#125;!`); // Hello, World!</code></pre>
+<ul>
+<li>在插值表达式中可以调用函数和方法：</li>
+</ul>
+<pre><code class="javascript">function capitalize(word) &#123;
+ return `$&#123; word[0].toUpperCase() &#125;$&#123; word.slice(1) &#125;`;
+&#125;
+console.log(`$&#123; capitalize(&#39;hello&#39;) &#125;, $&#123; capitalize(&#39;world&#39;) &#125;!`); // Hello, World!</code></pre>
+<ul>
+<li>模板也可以插入自己之前的值：</li>
+</ul>
+<pre><code class="javascript">let value = &#39;&#39;;
+function append() &#123;
+ value = `$&#123;value&#125;abc`
+ console.log(value);
+&#125;
+append(); // abc
+append(); // abcabc
+append(); // abcabcabc</code></pre>
+<h2 id="07-模板字面量标签函数"><a href="#07-模板字面量标签函数" class="headerlink" title="07. 模板字面量标签函数"></a>07. 模板字面量标签函数</h2><p>模板字面量也支持定义标签函数（tag function），而通过标签函数可以自定义插值行为。标签函数会接收被插值记号分隔后的模板和对每个表达式求值的结果。</p>
+<p>标签函数本身是一个常规函数，通过前缀到模板字面量来应用自定义行为，如下例所示。标签函数接收到的参数依次是原始字符串数组和对每个表达式求值的结果。这个函数的返回值是对模板字面量求值得到的字符串。</p>
+<p>最好通过一个例子来理解：</p>
+<pre><code class="javascript">let a = 6;
+let b = 9;
+function simpleTag(strings, aValExpression, bValExpression, sumExpression) &#123;
+ console.log(strings);
+ console.log(aValExpression);
+ console.log(bValExpression);
+ console.log(sumExpression);
+ return &#39;foobar&#39;;
+&#125;
+let untaggedResult = `$&#123; a &#125; + $&#123; b &#125; = $&#123; a + b &#125;`;
+let taggedResult = simpleTag`$&#123; a &#125; + $&#123; b &#125; = $&#123; a + b &#125;`;
+// [&quot;&quot;, &quot; + &quot;, &quot; = &quot;, &quot;&quot;]
+// 6
+// 9
+// 15
+console.log(untaggedResult); // &quot;6 + 9 = 15&quot;
+console.log(taggedResult); // &quot;foobar&quot;</code></pre>
+<p>因为表达式参数的数量是可变的，所以通常应该使用剩余操作符（rest operator）将它们收集到一<br>个数组中：</p>
+<pre><code class="javascript">let a = 6;
+let b = 9;
+function simpleTag(strings, ...expressions) &#123;
+ console.log(strings);
+ for(const expression of expressions) &#123;
+ console.log(expression);
+ &#125;
+ return &#39;foobar&#39;;
+&#125;
+let taggedResult = simpleTag`$&#123; a &#125; + $&#123; b &#125; = $&#123; a + b &#125;`;
+// [&quot;&quot;, &quot; + &quot;, &quot; = &quot;, &quot;&quot;]
+// 6
+// 9
+// 15
+console.log(taggedResult); // &quot;foobar&quot;</code></pre>
+<p>对于有 个插值的模板字面量，传给标签函数的表达式参数的个数始终是 ，而传给标签函数的第一个参数所包含的字符串个数则始终是n+1 。因此，如果你想把这些字符串和对表达式求值的结果拼接起来作为默认返回的字符串，可以这样做：</p>
+<pre><code class="javascript">let a = 6;
+let b = 9;
+function zipTag(strings, ...expressions) &#123;
+ return strings[0] +
+ expressions.map((e, i) =&gt; `$&#123;e&#125;$&#123;strings[i + 1]&#125;`)
+ .join(&#39;&#39;);
+&#125;
+let untaggedResult = `$&#123; a &#125; + $&#123; b &#125; = $&#123; a + b &#125;`;
+let taggedResult = zipTag`$&#123; a &#125; + $&#123; b &#125; = $&#123; a + b &#125;`;
+console.log(untaggedResult); // &quot;6 + 9 = 15&quot;
+console.log(taggedResult); // &quot;6 + 9 = 15&quot;</code></pre>
+<h2 id="08-原始字符串"><a href="#08-原始字符串" class="headerlink" title="08. 原始字符串"></a>08. 原始字符串</h2><p>使用模板字面量也可以直接获取原始的模板字面量内容（如换行符或Unicode字符），而不是被转换<br>后的字符表示。为此，可以使用默认的String.raw标签函数：</p>
+<pre><code class="javascript">// Unicode示例
+// \u00A9是版权符号
+console.log(`\u00A9`); // ©
+console.log(String.raw`\u00A9`); // \u00A9
+// 换行符示例
+console.log(`first line\nsecond line`);
+// first line
+// second line
+console.log(String.raw`first line\nsecond line`); // &quot;first line\nsecond line&quot;
+// 对实际的换行符来说是不行的
+// 它们不会被转换成转义序列的形式
+console.log(`first line
+second line`);
+// first line
+// second line
+console.log(String.raw`first line
+second line`);
+// first line
+// second line</code></pre>
+<p>另外，也可以通过标签函数的第一个参数，即字符串数组的.raw属性取得每个字符串的原始内容：</p>
+<pre><code class="javascript">function printRaw(strings) &#123;
+ console.log(&#39;Actual characters:&#39;);
+ for (const string of strings) &#123;
+ console.log(string);
+ &#125;
+ console.log(&#39;Escaped characters;&#39;);
+ for (const rawString of strings.raw) &#123;
+ console.log(rawString);
+ &#125;
+&#125;
+printRaw`\u00A9$&#123; &#39;and&#39; &#125;\n`;
+// Actual characters:
+// ©
+//（换行符）
+// Escaped characters:
+// \u00A9
+// \n</code></pre>
+<h1 id="二、经典题目"><a href="#二、经典题目" class="headerlink" title="二、经典题目"></a>二、经典题目</h1><h2 id="01-求字符串中出现最多的字符和个数"><a href="#01-求字符串中出现最多的字符和个数" class="headerlink" title="01.求字符串中出现最多的字符和个数"></a>01.求字符串中出现最多的字符和个数</h2><blockquote>
+<p>① 将字符串转成数组，对数组进行遍历，且在外循环中给其重新赋值（[arr[i]],count），在内层循环中，当遍历的元素与i索引对应的元素值相等时，给i索引对一个的元素的count++，并移除j索引对应的元素，且j–。遍历完数组后获取到不重复的字符且其在字符串中的出现的次数。再对得到的数组进行遍历，从中找出数量最多的元素/元素集合。输出。</p>
+</blockquote>
+<pre><code class="javascript"> function maxNumber1(str) &#123;
+        var arr = str.split(&quot;&quot;);
+        var max = 1;
+        for (var i = 0; i &lt; arr.length; i++) &#123;
+            arr[i] = [arr[i], max];
+            for (var j = i + 1; j &lt; arr.length; j++) &#123;
+                if (arr[i][0] == arr[j]) &#123;
+                    arr.splice(j, 1);
+                    arr[i][1]++;
+                    j--;
+                &#125;
+            &#125;
+        &#125;
+        var temp = 0;//用temp记录最大count对应的索引
+        for (var i = 1; i &lt; arr.length; i++) &#123;
+            if (arr[temp][1] &gt; arr[i][1]) &#123;
+                arr.splice(i, 1);
+                i--;
+            &#125; else if (arr[temp][1] &lt; arr[i][1]) &#123;
+                arr.splice(temp, 1);
+                temp = --i;//将原temp对应的元素移除后，将新的i值赋给temp
+            &#125;
+        &#125;
+        return arr;
+    &#125;
+    maxNumber1(&quot;aaaaaaaabbbbbbbbccddddddddeeee&quot;)</code></pre>
+<h2 id="02-找出字符串中最长的单词"><a href="#02-找出字符串中最长的单词" class="headerlink" title="02.找出字符串中最长的单词"></a>02.找出字符串中最长的单词</h2><pre><code class="javascript">// 思路：将字符串转换成数组，分别比较数组各个元素的长度，将长度最大的元素赋给temp，最终返回temp，则可得到字符串中最长的单词
+
+var str1 = &quot;yuan yuan yuan jiang jiang yong aaaaaaaaaaaaa aaaaaaaaaaaaa odpsospoaioaoaoaoaoao&quot;
+function searchMax(str) &#123;
+    var arr = str.split(&quot; &quot;)
+    var temp = arr[0];
+    for(var i=0;i&lt;arr.length;i++)&#123;
+        if(arr[i].length&gt;temp.length)&#123;
+            temp = arr[i]
+        &#125;
+    &#125;
+    return temp;
+&#125;
+console.log(searchMax(str1));</code></pre>
+<h2 id="03-字符串去重"><a href="#03-字符串去重" class="headerlink" title="03.字符串去重"></a>03.字符串去重</h2><pre><code class="javascript">//思路：传入的字符串，先将字符串转成数组，再对数组进行遍历，找到相同的元素，去除其余相同的元素，且j–(每去除一个元素，数组长度-1，且下一次遍历的索引应为当前j)
+
+var str = &quot;yuan yuan yuan jiang jiang yong aaaaaaaaaaaaa aaaaaaaaaaaaa odpsospoaioaoaoaoaoao&quot;;
+function sliceRepeat(str) &#123;
+    var arr = str.split(&quot; &quot;);
+        for(var i = 0;i&lt;arr.length;i++)&#123;
+            for(var j=i+1;j&lt;arr.length;j++)&#123;
+                if(arr[i]==arr[j])&#123;
+                    arr.splice(j,1);//从索引j开始去除一个元素
+                    j--;
+                &#125;
+            &#125;
+        &#125;
+    return arr.join(&quot; &quot;)
+&#125;
+console.log(sliceRepeat(str));</code></pre>
+<h2 id="04-字符串的翻转"><a href="#04-字符串的翻转" class="headerlink" title="04. 字符串的翻转"></a>04. 字符串的翻转</h2><pre><code class="javascript">//思路：将字符串转成数组，对数组进行翻转
+var str= &quot;abcd&quot;;
+console.log(str.split(&quot;&quot;).reverse().join(&quot;&quot;));</code></pre>
+<h2 id="05-实现千位分隔符"><a href="#05-实现千位分隔符" class="headerlink" title="05. 实现千位分隔符"></a>05. 实现千位分隔符</h2><pre><code class="javascript">//将字符串转化为数组，然后对其切分重组
+function change(str)&#123;
+    var arr = str.split(&#39;&#39;);
+    var result = [];
+    while(arr.length &gt; 3)&#123;
+      result.push(arr.splice(-3,3).join(&#39;&#39;));
+    &#125;
+    result.push(arr.join(&#39;&#39;));
+    console.log(result.reverse().join(&#39;,&#39;));
+&#125;
+change(&quot;123456789&quot;);</code></pre>
+<h1 id="三、拓展"><a href="#三、拓展" class="headerlink" title="三、拓展"></a>三、拓展</h1><h2 id="01-字符串与数组的区别与联系"><a href="#01-字符串与数组的区别与联系" class="headerlink" title="01. 字符串与数组的区别与联系"></a>01. 字符串与数组的区别与联系</h2><ol>
+<li>区别:字符串不可变而数组可变。</li>
+</ol>
+<blockquote>
+<p>字符串不可变是指 字符串的成员函数不会改变其原始值，而是创建并返回一个新的字符串。而数组的成员函数都是在其原始值上进行操作。</p>
+</blockquote>
+<ol start="2">
+<li>联系：字符串与数组间可以相互转换。</li>
+</ol>
+<blockquote>
+<p>实际解决问题时，字符串与数组之间常常配合使用。</p>
+</blockquote>
+<p><strong>字符串到数组</strong></p>
+<pre><code class="javascript">stringObject.split()
+//示例：
+let str1 = &#39;a,b,c&#39;;
+let arr1 = str.split(&quot;,&quot;); // [&quot;a&quot;, &quot;b&quot; , &quot;c&quot;]</code></pre>
+<p><strong>数组到字符串</strong></p>
+<pre><code class="javascript">stringObject.toString()
+stringObject.join(&#39;,&#39;)
+//示例:
+let arr = new Array(1, 2, 3);
+let string1 = arr.toString(); // &quot;1, 2, 3&quot;
+let string2 = arr.join(&#39;,&#39;); // &quot;1, 2, 3&quot;</code></pre>
+<h2 id="02-正则表达式"><a href="#02-正则表达式" class="headerlink" title="02. 正则表达式"></a>02. 正则表达式</h2><blockquote>
+<p> <strong>match()</strong> 在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。找到它返回指定的值，找不到返回null。<br> <strong>replace()</strong> 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。返回值是一个新的字符串。<br> <strong>search()</strong> 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。返回stringObject 中第一个与regexp 相匹配的子串的起始位置，没有返回-1</p>
+</blockquote>
+<p>以上字符串的使用方法均与正则表达式有关。</p>
+  
+    </div> 
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+
+    <div class="post-info-wrapper">
+            
+                    <!-- Post Info -->
+                    <p class="post-date">2021-04-01</p>
+                    
+                    
+                        <p class="post-info-categories">
+                            
+                        </p>
+                    
+
+                    
+            
+    </div>
+</article>
+
+
+    
+
+            </main>
+
+            <!-- 'To Top' Btn-->
+            
+                <div id="to-top">
+    <a href="#top" class="toTop">
+        <i class="fa fa-pagelines"></i>
+    </a>
+</div>
+            
+
+            <!-- Footer -->
+            
+                <footer class="footer-wrapper col-xs-12 col-sm-12">
+    <div class="footer-banner-wrapper">
+        <p class="footer-banner">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/" title="Hexo">Hexo</a></p>
+        <P class="footer-banner">Theme <a target="_blank" rel="noopener" href="https://github.com/Lonezj/hexo-theme-wind" title="Wind">wind</a></P>
+    </div>
+</footer>
+            
+        </div>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="/css/google-prettify-monokai.css" type="text/css">
+        <script src="//cdn.bootcss.com/prettify/r298/prettify.min.js" type="text/javascript"></script>
+    </body>
+</html>
