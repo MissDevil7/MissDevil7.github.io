@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Devil">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Page Title -->
+    
+        <title>js-Date类型 | Miss.Devil&#39;s hexo</title>
+    
+    <link rel="icon" href="/img/avatar-default.png">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+<script src="/js/script.js"></script>
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <style>
+        .deactiveColor{
+            color: #37474f;
+        }
+        .activeColor{
+            color: #006064;
+        }
+        a:hover{
+            color: #006064;
+        }
+        .header-btn{
+            color: #37474f;
+        }
+        
+        .post-content img{
+            margin: 50px auto;
+        }
+        
+    </style>
+<meta name="generator" content="Hexo 5.2.0"></head>
+    <body>
+        <div class="container">
+
+            <!-- Top Anchor -->
+            <div id="top"></div>
+
+            <!-- Header -->
+            <header class="header-wrapper">
+    <div class="header-title-wrapper">
+        <!-- Page Title -->
+        <p class="header-title">
+             
+                
+                    js-Date类型
+                
+            
+        </p>  
+    </div>    
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+    
+    <div class="header-detail">
+        <!-- Header Button -->
+        <div class="header-btn-wrapper">
+            
+                <span>
+                    <a class="home-btn header-btn" href="/" title="homepage"><i class="fa fa-home"></i></a>
+                </span>
+
+                
+                    <span>
+                        <a class="catalog-btn header-btn"><i class="fa fa-list-ul"></i></a>
+                    </span>
+                
+            
+        </div>
+    </div>
+</header>
+
+            <!-- Main -->
+            <main>
+                <article class="post-wrapper">
+    
+
+    
+        <!-- Article Catalog -->
+        <div class="catalog-dropdown col-xs-12 col-sm-12">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text">1、创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">2、方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%89Date-parse"><span class="toc-number">1.2.1.</span> <span class="toc-text">1）Date.parse()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%89Date-UTC"><span class="toc-number">1.2.2.</span> <span class="toc-text">2）Date.UTC()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%89Date-now"><span class="toc-number">1.2.3.</span> <span class="toc-text">3）Date.now()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%B7%9D%E7%A6%BB%E4%B8%8B%E8%AF%BE%E8%BF%98%E6%9C%89%E5%A4%9A%E4%B9%85"><span class="toc-number">1.3.</span> <span class="toc-text">3、距离下课还有多久</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">二、方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E7%BB%A7%E6%89%BF%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">1、继承的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">2、日期格式化方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E7%BB%84%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">3、日期&#x2F;时间组件方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9F%BA%E6%9C%AC%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">三、基本引用类型</span></a></li></ol>
+        </div>
+    
+
+    
+        <!--For now, Lightbox Only Show in Post Layout -->
+        
+
+        
+        
+            <!-- Article Img Lightbox -->
+            <div class="gallery">
+    
+    
+    <div class="lightbox">
+        <!-- Close Button -->
+        <span class="close-gallery">&times;</span>
+        
+        <!-- Photo -->
+        <img class="gallery-photo">
+    </div>
+</div>
+        
+    
+
+    
+
+    <!-- Article Content -->
+    <div class="post-content">
+        <h1 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h1><blockquote>
+<p>Date类型将日期保存为自协调世界时（UTC，Universal Time Coordinated）时间1970年1月1日午夜（零时）至今所经过的毫秒数。使用这种存储格式，Date类型可以精确表示1970年1月1日之前及之后285616年的日期。</p>
+</blockquote>
+<h2 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h2><p>要创建日期对象，就使用new操作符来调用Date构造函数：</p>
+<pre><code class="javascript">let now = new Date();</code></pre>
+<h2 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h2><p>在不给Date构造函数传参数的情况下，创建的对象将保存当前日期和时间。<br>要基于其他日期和时间创建日期对象，必须传入其毫秒表示（UNIX纪元1970年1月1日午夜之后的毫秒数）。<br>ECMAScript为此提供了两个辅助方法：**Date.parse()和Date.UTC()**。</p>
+<h3 id="1）Date-parse"><a href="#1）Date-parse" class="headerlink" title="1）Date.parse()"></a>1）Date.parse()</h3><p>Date.parse()方法接收一个表示日期的字符串参数，尝试将这个字符串转换为表示该日期的毫秒数。</p>
+<p>所有实现都必须支持下列日期格式：</p>
+<ul>
+<li>“<strong>月/日/年</strong>”，如”5/23/2019”； </li>
+<li>“<strong>月名 日, 年</strong>”，如”May 23, 2019”；</li>
+<li>“<strong>周 月名 日 年 时:分:秒 时区</strong>”，如”Tue May 23 2019 00:00:00 GMT-0700”； </li>
+<li>ISO 8601扩展格式“<strong>YYYY-MM-DDTHH:mm:ss.sssZ</strong>”，如2019-05-23T00:00:00（只适用于兼容ES5的实现）。</li>
+</ul>
+<p>比如，要创建一个表示“2019年5月23日”的日期对象，可以使用以下代码：</p>
+<pre><code class="javascript">let someDate = new Date(Date.parse(&quot;May 23, 2019&quot;));
+let someDate = new Date(Date.parse(&quot;5/23/2019&quot;));
+let someDate = new Date(Date.parse(&quot;Tue May 23 2019 00:00:00 GMT-0700&quot;));
+let someDate = new Date(Date.parse(&quot;2019-05-23T00:00:00&quot;));</code></pre>
+<p>① 如果传给Date.parse()的字符串并不表示日期，则该方法会返回NaN。<br>② 如果直接把表示日期的字符串传给Date构造函数，那么Date会在后台调用Date.parse()。<br>换句话说，下面两行代码是等价的：</p>
+<pre><code class="javascript">let someDate = new Date(&quot;May 23, 2019&quot;);
+let someDate = new Date(Date.parse(&quot;May 23, 2019&quot;));
+//这两行代码得到的日期对象相同。</code></pre>
+<blockquote>
+<p>注意　 不同的浏览器对Date类型的实现有很多问题。比如，很多浏览器会选择用当前日期替代越界的日期，因此有些浏览器会将”January 32, 2019”解释为”February 1, 2019”。Opera则会插 入当前月的当前日，返回”January 当前日,2019”。就是说，如果是在9月21日运行代码，会返 回”January 21, 2019”。</p>
+</blockquote>
+<h3 id="2）Date-UTC"><a href="#2）Date-UTC" class="headerlink" title="2）Date.UTC()"></a>2）Date.UTC()</h3><p>Date.UTC()方法也返回日期的毫秒表示，但使用的是跟Date.parse()不同的信息来生成这个值。</p>
+<p>传给Date.UTC()的参数是<strong>年、零起点月数（1月是0，2月是1，以此类推）、日（1<del>31）、时（0</del>23）、分、秒和毫秒</strong>。这些参数中，只有前两个（年和月）是必需的。如果不提供日，那么默认为1日。其他参数的默认值都是0。</p>
+<p>下面是使用Date.UTC()的两个例子：</p>
+<pre><code class="javascript">// GMT时间2000年1月1日零点
+let y2k = new Date(Date.UTC(2000, 0));
+// GMT时间2005年5月5日下午5点55分55秒
+let allFives = new Date(Date.UTC(2005, 4, 5, 17, 55, 55));</code></pre>
+<p>与Date.parse()一样，Date.UTC()也会被Date构造函数隐式调用，但有一个区别：这种情况下创建的是本地日期，不是GMT日期。不过Date构造函数跟Date.UTC()接收的参数是一样的。因此，如果第一个参数是数值，则构造函数假设它是日期中的年，第二个参数就是月，以此类推。前面的例子也可以这样来写：</p>
+<pre><code class="javascript">// 本地时间2000年1月1日零点
+let y2k = new Date(2000, 0);
+// 本地时间2005年5月5日下午5点55分55秒
+let allFives = new Date(2005, 4, 5, 17, 55, 55);</code></pre>
+<p>以上代码创建了与前面例子中相同的两个日期，但这次的两个日期是（由于系统设置决定的）本地时区的日期。</p>
+<h3 id="3）Date-now"><a href="#3）Date-now" class="headerlink" title="3）Date.now()"></a>3）Date.now()</h3><p>ECMAScript还提供了Date.now()方法，返回表示方法执行时日期和时间的毫秒数。这个方法可以方便地用在代码分析中：</p>
+<pre><code class="javascript">// 起始时间
+let start = Date.now();
+// 调用函数
+doSomething();
+// 结束时间
+let stop = Date.now(),
+result = stop - start;</code></pre>
+<h2 id="3、距离下课还有多久"><a href="#3、距离下课还有多久" class="headerlink" title="3、距离下课还有多久"></a>3、距离下课还有多久</h2><pre><code class="javascript">var now = new Date(); // 当前时间
+var future = new Date(&quot;2021-4-22 21:00:00&quot;);
+
+var time = parseInt((future - now) / 1000); // 秒数
+
+// 将秒数转换成 时 分 秒
+// 时
+var hours = parseInt(time / 3600);
+// 分
+var minutes = parseInt(time / 60) % 60;
+// 秒
+var seconds = time % 60;
+
+var str = &quot;距离下课还有: &quot; + hours + &#39;时&#39; + minutes + &#39;分&#39; + seconds + &#39;秒&#39;;
+console.log(str);</code></pre>
+<h1 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h1><h2 id="1、继承的方法"><a href="#1、继承的方法" class="headerlink" title="1、继承的方法"></a>1、继承的方法</h2><p>与其他类型一样，Date类型重写了toLocaleString()、toString()和valueOf()方法。但与其他类型不同，重写后这些方法的<strong>返回值不一样</strong>。</p>
+<ul>
+<li>toLocaleString()方法返回<strong>与浏览器运行的本地环境一致的日期和时间</strong>。这通常意味着格式中包含针对时间的AM（上午）或PM（下午），但不包含时区信息（具体格式可能因浏览器而不同）。</li>
+<li>toString()方法通常返回<strong>带时区信息的日期和时间</strong>，而时间也是以24小时制（0~23）表示的。</li>
+</ul>
+<p>示例（2021年2月1日 地区为”en-US”的PST，即Pacific Standard Time，太平洋标准时间）：</p>
+<pre><code class="javascript">toLocaleString() - 2/1/2021 12:00:00 AM
+toString() - Thu Feb 1 2021 00:00:00 GMT-0800 (Pacific Standard Time)</code></pre>
+<p>现代浏览器在这两个方法的输出上已经趋于一致。在比较老的浏览器上，每个方法返回的结果可能在每个浏览器上都是不同的。这些差异意味着toLocaleString()和toString()可能只对调试有用，不能用于显示。</p>
+<ul>
+<li>Date类型的valueOf()方法根本就不返回字符串，这个方法被重写后返回的是日期的毫秒表示。因此，操作符（如小于号和大于号）可以直接使用它返回的值。</li>
+</ul>
+<p>比如下面的例子：</p>
+<pre><code class="javascript">let date1 = new Date(2021, 0, 1); // 2021年1月1日
+let date2 = new Date(2021, 1, 1); // 2021年2月1日
+console.log(date1 &lt; date2); // true
+console.log(date1 &gt; date2); // false</code></pre>
+<p>日期2021年1月1日在2021年2月1日之前，所以说前者小于后者没问题。因为2021年1月1日的毫秒表示小于2021年2月1日的毫秒表示，所以用小于号比较这两个日期时会返回true。这也是确保日期先后的一个简单方式。</p>
+<h2 id="2、日期格式化方法"><a href="#2、日期格式化方法" class="headerlink" title="2、日期格式化方法"></a>2、日期格式化方法</h2><p>Date类型有几个专门用于格式化日期的方法，它们都会返回字符串：</p>
+<ul>
+<li>toDateString()显示日期中的周几、月、日、年（格式特定于实现）；</li>
+<li>toTimeString()显示日期中的时、分、秒和时区（格式特定于实现）；</li>
+<li>toLocaleDateString()显示日期中的周几、月、日、年（格式特定于实现和地区）；</li>
+<li>toLocaleTimeString()显示日期中的时、分、秒（格式特定于实现和地区）；</li>
+<li>toUTCString()显示完整的UTC日期（格式特定于实现）。</li>
+</ul>
+<p>这些方法的输出与toLocaleString()和toString()一样，会因浏览器而异。因此不能用于在用户界面上一致地显示日期。</p>
+<h2 id="3、日期-时间组件方法"><a href="#3、日期-时间组件方法" class="headerlink" title="3、日期/时间组件方法"></a>3、日期/时间组件方法</h2><p>Date类型剩下的方法（见下表）直接涉及取得或设置日期值的特定部分。</p>
+<ul>
+<li>注意表中“UTC日期”，指的是没有时区偏移（将日期转换为GMT）时的日期。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20210422164956247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210422164956305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="三、基本引用类型"><a href="#三、基本引用类型" class="headerlink" title="三、基本引用类型"></a>三、基本引用类型</h1><p>引用值（或者对象）是某个特定<strong>引用类型</strong>的实例。在ECMAScript中，引用类型是把数据和功能组织到一起的结构。引用类型有时候也被称为对象定义，因为它们描述了自己的对象应有的属性和方法。</p>
+<p>对象被认为是某个特定引用类型的实例。新对象通过使用new操作符后跟一个构造函数（constructor）来创建。构造函数就是用来创建新对象的函数，比如下面这行代码：</p>
+<pre><code class="javascript">let now = new Date();</code></pre>
+<p>这行代码创建了引用类型Date的一个新实例，并将它保存在变量now中。Date()在这里就是构造函数，它负责创建一个只有默认属性和方法的简单对象。ECMAScript提供了很多像Date这样的原生引用类型，帮助开发者实现常见的任务：Array(),Object(),Number(),String(),Boolean(),Function()，RegExp()等类型。</p>
+<p>除此之外，我们也可以自定义一个引用类型:</p>
+<pre><code class="javascript">function Ball(size,color) &#123;//定义一个球的引用类型
+    this.size=size;
+    this.color=color;
+    &#125;
+let smallball= new Ball(20,&quot;blue&quot;);//创建一个球的对象实例</code></pre>
+  
+    </div> 
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+
+    <div class="post-info-wrapper">
+            
+                    <!-- Post Info -->
+                    <p class="post-date">2021-04-22</p>
+                    
+                    
+                        <p class="post-info-categories">
+                            
+                        </p>
+                    
+
+                    
+            
+    </div>
+</article>
+
+
+    
+
+            </main>
+
+            <!-- 'To Top' Btn-->
+            
+                <div id="to-top">
+    <a href="#top" class="toTop">
+        <i class="fa fa-pagelines"></i>
+    </a>
+</div>
+            
+
+            <!-- Footer -->
+            
+                <footer class="footer-wrapper col-xs-12 col-sm-12">
+    <div class="footer-banner-wrapper">
+        <p class="footer-banner">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/" title="Hexo">Hexo</a></p>
+        <P class="footer-banner">Theme <a target="_blank" rel="noopener" href="https://github.com/Lonezj/hexo-theme-wind" title="Wind">wind</a></P>
+    </div>
+</footer>
+            
+        </div>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="/css/google-prettify-monokai.css" type="text/css">
+        <script src="//cdn.bootcss.com/prettify/r298/prettify.min.js" type="text/javascript"></script>
+    </body>
+</html>
