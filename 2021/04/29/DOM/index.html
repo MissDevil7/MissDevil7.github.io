@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Devil">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Page Title -->
+    
+        <title>初识Dom | Miss.Devil&#39;s hexo</title>
+    
+    <link rel="icon" href="/img/avatar-default.png">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+<script src="/js/script.js"></script>
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <style>
+        .deactiveColor{
+            color: #37474f;
+        }
+        .activeColor{
+            color: #006064;
+        }
+        a:hover{
+            color: #006064;
+        }
+        .header-btn{
+            color: #37474f;
+        }
+        
+        .post-content img{
+            margin: 50px auto;
+        }
+        
+    </style>
+<meta name="generator" content="Hexo 5.2.0"></head>
+    <body>
+        <div class="container">
+
+            <!-- Top Anchor -->
+            <div id="top"></div>
+
+            <!-- Header -->
+            <header class="header-wrapper">
+    <div class="header-title-wrapper">
+        <!-- Page Title -->
+        <p class="header-title">
+             
+                
+                    初识Dom
+                
+            
+        </p>  
+    </div>    
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+    
+    <div class="header-detail">
+        <!-- Header Button -->
+        <div class="header-btn-wrapper">
+            
+                <span>
+                    <a class="home-btn header-btn" href="/" title="homepage"><i class="fa fa-home"></i></a>
+                </span>
+
+                
+                    <span>
+                        <a class="catalog-btn header-btn"><i class="fa fa-list-ul"></i></a>
+                    </span>
+                
+            
+        </div>
+    </div>
+</header>
+
+            <!-- Main -->
+            <main>
+                <article class="post-wrapper">
+    
+
+    
+        <!-- Article Catalog -->
+        <div class="catalog-dropdown col-xs-12 col-sm-12">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">一、基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81DOM%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1、DOM概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81HTML-DOM%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text">2、HTML DOM树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%8A%82%E7%82%B9%E5%85%B3%E7%B3%BB"><span class="toc-number">1.3.</span> <span class="toc-text">3、节点关系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">获取元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A0%B9%E6%8D%AEID%E8%8E%B7%E5%8F%96"><span class="toc-number">2.1.</span> <span class="toc-text">1.根据ID获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E5%90%8D%E8%8E%B7%E5%8F%96"><span class="toc-number">2.2.</span> <span class="toc-text">2 根据标签名获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%80%9A%E8%BF%87HTML5%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95%E8%8E%B7%E5%8F%96"><span class="toc-number">2.3.</span> <span class="toc-text">3 通过HTML5新增方法获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%89%B9%E6%AE%8A%E5%85%83%E7%B4%A0%E8%8E%B7%E5%8F%96%EF%BC%88body-html%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">4 特殊元素获取（body,html）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">三、事件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%89%A7%E8%A1%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.1.</span> <span class="toc-text">1、执行事件的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%B8%B8%E8%A7%81%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2、常见的鼠标事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0"><span class="toc-number">4.</span> <span class="toc-text">三、操作元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="toc-number">4.1.</span> <span class="toc-text">1、改变元素内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-element-innerText"><span class="toc-number">4.1.1.</span> <span class="toc-text">1.1  element.innerText</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-element-innerHTML"><span class="toc-number">4.1.2.</span> <span class="toc-text">1.2 element.innerHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E8%8A%82%E7%82%B9"><span class="toc-number">4.1.3.</span> <span class="toc-text">1.3 添加新的节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%80%BB%E7%BB%93"><span class="toc-number">4.1.4.</span> <span class="toc-text">1.5 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E8%8A%82%E7%82%B9%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-number">4.1.5.</span> <span class="toc-text">1.4 删除某个节点元素：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text">2、其它常用元素的属性操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.3.</span> <span class="toc-text">3、表单元素的属性操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.</span> <span class="toc-text">4、样式属性操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-element-style"><span class="toc-number">4.4.1.</span> <span class="toc-text">4.1 element.style</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-element-className-%E7%B1%BB%E5%90%8D%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.2.</span> <span class="toc-text">4.2 element.className 类名样式操作</span></a></li></ol></li></ol></li></ol>
+        </div>
+    
+
+    
+        <!--For now, Lightbox Only Show in Post Layout -->
+        
+
+        
+        
+            <!-- Article Img Lightbox -->
+            <div class="gallery">
+    
+    
+    <div class="lightbox">
+        <!-- Close Button -->
+        <span class="close-gallery">&times;</span>
+        
+        <!-- Photo -->
+        <img class="gallery-photo">
+    </div>
+</div>
+        
+    
+
+    
+
+    <!-- Article Content -->
+    <div class="post-content">
+        <h1 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h1><h2 id="1、DOM概述"><a href="#1、DOM概述" class="headerlink" title="1、DOM概述"></a>1、DOM概述</h2><blockquote>
+<p>DOM（对象文档模型（Document Object Model）），是W3C组织推荐的处理可扩展置标语言的标准编程接口。DOM可以以一种独立于平台和语言的方式访问和修改一个文档的内容和结构。也就是说，这是表示和处理一个HTML或XML文档的常用方法。DOM技术是用户页面可以动态的变化，从而大大使页面的交互性增强。但是DOM必须通过JavaScript等脚本语言来进行读取，改变HTML、XHTML以及XML等文档。</p>
+</blockquote>
+<ul>
+<li>通过这些 DOM 开发者可以添加、删除和修改页面的各个部分。</li>
+</ul>
+<h2 id="2、HTML-DOM树"><a href="#2、HTML-DOM树" class="headerlink" title="2、HTML DOM树"></a>2、HTML DOM树</h2><blockquote>
+<p>任何HTML文档都可以用DOM表示为一个由节点构成的层级结构。节点分很多类型，每种类型对应着文 档中不同的信息和（或）标记，也都有自己不同的特性、数据和方法，而且与其他类型有某种关系。这些关系构成了层级，让标记可以表示为一个以特定节点为根的树形结构。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20210429150102854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<ul>
+<li>常用的节点为document、标签元素节点、文本节点、注释节点。</li>
+<li>文档（document）是DOM操作的起始节点。</li>
+<li>文档：一个页面就是一个文档，DOM 使用 document 表示</li>
+<li>元素：页面中的所有标签都是元素，DOM 中使用 element 表示</li>
+<li>节点：网页中的所有内容都是节点，DOM 中使用 node 表示</li>
+</ul>
+<h2 id="3、节点关系"><a href="#3、节点关系" class="headerlink" title="3、节点关系"></a>3、节点关系</h2><blockquote>
+<p> 父（parent）、子（child）和同胞（sibling）等术语用于描述这些关系。父节点拥有子节点。同级的子节点被称为同胞（兄弟或姐妹）。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20210429162859903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h1><p>① 根据ID获取</p>
+<p>② 根据标签名获取</p>
+<p>③ 通过HTML5新增方法获取</p>
+<p>④ 特殊元素获取</p>
+<h2 id="1-根据ID获取"><a href="#1-根据ID获取" class="headerlink" title="1.根据ID获取"></a>1.根据ID获取</h2><blockquote>
+<p>使用 getElementById() 方法可以获取带有ID的元素对象。</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;time&quot;&gt;
+            2021-04-29
+        &lt;/div&gt;
+        &lt;script&gt;
+            var timer = document.getElementById(&#39;time&#39;);
+            console.log(timer);
+            //返回的是div元素对象
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+<li>因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面</li>
+</ul>
+<h2 id="2-根据标签名获取"><a href="#2-根据标签名获取" class="headerlink" title="2 根据标签名获取"></a>2 根据标签名获取</h2><blockquote>
+<p>使用 getElementsByTagName() 方法可以返回带有指定标签名的对象的集合。</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul&gt;
+            &lt;li&gt;夜来携手梦同游，晨起盈巾泪莫收&lt;/li&gt;
+            &lt;li&gt;漳浦老身三度病，咸阳草树八回秋&lt;/li&gt;
+            &lt;li&gt;君埋泉下泥销骨，我寄人间雪满头&lt;/li&gt;
+            &lt;li&gt;阿卫韩郎相次去，夜台茫昧得知否&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ol id=&quot;ol&quot;&gt;
+                &lt;li&gt;西安&lt;/li&gt;
+                &lt;li&gt;邮电&lt;/li&gt;
+                &lt;li&gt;大学&lt;/li&gt;    
+        &lt;/ol&gt;
+        &lt;script&gt;
+            //1.返回值是获取元素对象的集合，以伪数组形式存储
+            var lis = document.getElementsByTagName(&#39;li&#39;);
+            console.log(lis);//相当于lis[0]
+            console.log(lis[0]);
+            // 2. 我们想要依次打印里面的元素对象我们可以采取遍历的方式
+            for (var i = 0; i &lt; lis.length; i++) &#123;
+                console.log(lis[i]);
+            &#125;
+            // 3. 如果页面中只有一个li 返回的还是只有一个元素的伪数组形式 
+            // 4. 如果页面中没有这个元素 返回的是空的伪数组的形式
+
+               //查找ol标签下的li标签
+            // 5. element.getElementsByTagName(&#39;标签名&#39;); 父元素必须是指定的单个元素
+            // var ol = document.getElementsByTagName(&#39;ol&#39;); // [ol]
+            // console.log(ol[0].getElementsByTagName(&#39;li&#39;));
+            var ol = document.getElementById(&#39;ol&#39;);
+            console.log(ol.getElementsByTagName(&#39;li&#39;));
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 id="3-通过HTML5新增方法获取"><a href="#3-通过HTML5新增方法获取" class="headerlink" title="3 通过HTML5新增方法获取"></a>3 通过HTML5新增方法获取</h2><blockquote>
+<p> 使用 getElementsByClassName() 方法可以返回带有指定标签名的对象的集合。<br> querySelector 返回指定选择器的第一个元素对象。<br> querySelectorAll()返回指定选择器的所有元素对象集合。</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;box&quot;&gt;盒子1&lt;/div&gt;
+        &lt;div class=&quot;box&quot;&gt;盒子2&lt;/div&gt;
+        &lt;div id=&quot;nav&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;TC&lt;/li&gt;
+                &lt;li&gt;实验室&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+            // 1. getElementsByClassName 根据类名获得某些元素集合
+            var boxs = document.getElementsByClassName(&#39;box&#39;);
+            console.log(boxs);
+            // 2. querySelector 返回指定选择器的第一个元素对象 选择器需要加符号 .box  #nav
+            var firstBox = document.querySelector(&#39;.box&#39;);
+            console.log(firstBox);
+            var nav = document.querySelector(&#39;#nav&#39;);
+            console.log(nav);
+            var li = document.querySelector(&#39;li&#39;);
+            console.log(li);
+            // 3. querySelectorAll()返回指定选择器的所有元素对象集合
+            var allBox = document.querySelectorAll(&#39;.box&#39;);
+            console.log(allBox);
+            var lis = document.querySelectorAll(&#39;li&#39;);
+            console.log(lis);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="4-特殊元素获取（body-html）"><a href="#4-特殊元素获取（body-html）" class="headerlink" title="4 特殊元素获取（body,html）"></a>4 特殊元素获取（body,html）</h2><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            // 1.获取body 元素
+            var bodyEle = document.body;
+            console.log(bodyEle);
+            console.dir(bodyEle);
+            // 2.获取html 元素
+            // var htmlEle = document.html;//undefind
+            var htmlEle = document.documentElement;
+            console.log(htmlEle);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h1 id="三、事件基础"><a href="#三、事件基础" class="headerlink" title="三、事件基础"></a>三、事件基础</h1><h2 id="1、执行事件的步骤"><a href="#1、执行事件的步骤" class="headerlink" title="1、执行事件的步骤"></a>1、执行事件的步骤</h2><blockquote>
+<p>事件三要素：获取事件源、绑定事件、书写事件驱动程序。</p>
+<p>① 获取事件源</p>
+<p>② 注册事件（绑定事件）</p>
+<p>③ 添加事件处理程序（采取函数赋值形式）</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;鼠标点击&lt;/div&gt;
+        &lt;script&gt;
+            // 执行事件步骤
+            // 点击div 控制台输出 “我被选中了”
+            // 1. 获取事件源
+            var div = document.querySelector(&#39;div&#39;);
+            // 2.绑定事件 onclick(鼠标点击)
+            // div.onclick 
+            // 3.添加事件处理程序 
+            div.onclick = function() &#123;
+                console.log(&#39;我被选中了&#39;);
+            &#125;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="2、常见的鼠标事件"><a href="#2、常见的鼠标事件" class="headerlink" title="2、常见的鼠标事件"></a>2、常见的鼠标事件</h2><p><img src="https://img-blog.csdnimg.cn/20210429164336349.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="三、操作元素"><a href="#三、操作元素" class="headerlink" title="三、操作元素"></a>三、操作元素</h1><h2 id="1、改变元素内容"><a href="#1、改变元素内容" class="headerlink" title="1、改变元素内容"></a>1、改变元素内容</h2><h3 id="1-1-element-innerText"><a href="#1-1-element-innerText" class="headerlink" title="1.1  element.innerText"></a>1.1  element.innerText</h3><blockquote>
+<p>从起始位置到终止位置的内容，但他去除html标签，同时空格和换行也会换掉。</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button&gt;点击显示当前系统时间&lt;/button&gt;
+        &lt;div&gt; 当前时间是： &lt;/div&gt;
+        &lt;p&gt;&lt;/p&gt;
+        &lt;script&gt;
+            // 当我们点击了按钮，div里面的文字会发生变化
+            // 1. 获取元素 
+            var btn = document.querySelector(&#39;button&#39;);
+            var div = document.querySelector(&#39;div&#39;);
+            // 2.注册事件
+            btn.onclick = function() &#123;
+                div.innerText = getDate();
+            &#125;
+            function getDate() &#123;
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var dates = date.getDate();
+                var arr = [&#39;星期日&#39;, &#39;星期一&#39;, &#39;星期二&#39;, &#39;星期三&#39;, &#39;星期四&#39;, &#39;星期五&#39;, &#39;星期六&#39;];
+                var day = date.getDay();
+                return  year + &#39;年&#39; + month + &#39;月&#39; + dates + &#39;日 &#39; + arr[day];
+            &#125;
+            // 我们元素可以不用添加事件
+                var p = document.querySelector(&#39;p&#39;);
+                p.innerText = getDate();
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="1-2-element-innerHTML"><a href="#1-2-element-innerHTML" class="headerlink" title="1.2 element.innerHTML"></a>1.2 element.innerHTML</h3><blockquote>
+<p>起始位置到终止位置的全部内容，包括html标签，同时保留空格和换行。</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;p&gt;
+            我是文字
+            &lt;span&gt;123&lt;/span&gt;
+        &lt;/p&gt;
+        &lt;script&gt;
+            // innerText 和 innerHTML的区别 
+            // 1. innerText 不识别html标签 非标准  去除空格和换行
+            var div = document.querySelector(&#39;div&#39;);
+            div.innerText = &#39;&lt;strong&gt;今年是：&lt;/strong&gt; 2021&#39;;
+            // 2. innerHTML 识别html标签 W3C标准 保留空格和换行的
+            div.innerHTML = &#39;&lt;strong&gt;今年是：&lt;/strong&gt; 2021&#39;;
+            // 这两个属性是可读写的  可以获取元素里面的内容
+            var p = document.querySelector(&#39;p&#39;);
+            console.log(p.innerText);
+            console.log(p.innerHTML);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3 id="1-3-添加新的节点"><a href="#1-3-添加新的节点" class="headerlink" title="1.3 添加新的节点"></a>1.3 添加新的节点</h3><pre><code class="javascript">    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;body&gt;
+
+    &lt;div id=&quot;div1&quot;&gt;
+    &lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;
+    &lt;p id=&quot;p2&quot;&gt;这是另一个段落。&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+    var para=document.createElement(&quot;p&quot;);//创建一个标签p节点名为para
+    var node=document.createTextNode(&quot;这是新段落。&quot;);//定义节点元素的内容
+    para.appendChild(node);//将元素和内容联系起来
+
+    var element=document.getElementById(&quot;div1&quot;);//找到节点为div1的节点
+    element.appendChild(para);//向节点div1中添加新节点para
+    &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+<h3 id="1-5-总结"><a href="#1-5-总结" class="headerlink" title="1.5 总结"></a>1.5 总结</h3><p><img src="https://img-blog.csdnimg.cn/20210429180820711.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="1-4-删除某个节点元素："><a href="#1-4-删除某个节点元素：" class="headerlink" title="1.4 删除某个节点元素："></a>1.4 删除某个节点元素：</h3><pre><code class="javascript">    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;body&gt;
+
+    &lt;div id=&quot;div1&quot;&gt;
+    &lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;
+    &lt;p id=&quot;p2&quot;&gt;这是另一个段落。&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+    var parent=document.getElementById(&quot;div1&quot;);
+    var child=document.getElementById(&quot;p1&quot;);
+    parent.removeChild(child);//删除父节点中的子节点child
+    &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+<h2 id="2、其它常用元素的属性操作"><a href="#2、其它常用元素的属性操作" class="headerlink" title="2、其它常用元素的属性操作"></a>2、其它常用元素的属性操作</h2><blockquote>
+<p> src、href、id、alt、title 等等。</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+            &lt;style&gt;
+                img &#123;
+                    width: 400px;
+                    height:300px;
+                &#125;
+            &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button id=&quot;lamu&quot;&gt;拉姆&lt;/button&gt;
+        &lt;button id=&quot;leimu&quot;&gt;蕾姆&lt;/button&gt; &lt;br&gt;
+        &lt;img src=&quot;images/photo.webp&quot; alt=&quot;&quot; title=&quot;photo&quot;&gt;
+
+        &lt;script&gt;
+            // 修改元素属性  src
+            // 1. 获取元素
+            var lamu = document.getElementById(&#39;lamu&#39;);
+            var leimu = document.getElementById(&#39;leimu&#39;);
+            var img = document.querySelector(&#39;img&#39;);
+            // 2. 注册事件  处理程序
+            lamu.onclick = function() &#123;
+                img.src = &#39;images/lamu.png&#39;;
+                img.title = &#39;拉姆&#39;;
+            &#125;
+            leimu.onclick = function() &#123;
+                img.src = &#39;images/leimu.png&#39;;
+                img.title = &#39;蕾姆&#39;;
+            &#125;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="3、表单元素的属性操作"><a href="#3、表单元素的属性操作" class="headerlink" title="3、表单元素的属性操作"></a>3、表单元素的属性操作</h2><blockquote>
+<p>利用DOM可以操作表单以下属性<br>type、value、checked、selected、disabled</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;input type=&quot;text&quot; value=&quot;输入内容&quot;&gt;
+        &lt;button&gt;提交&lt;/button&gt;
+        &lt;script&gt;
+            // 1. 获取元素
+            var btn = document.querySelector(&#39;button&#39;);
+            var input = document.querySelector(&#39;input&#39;);
+            // 2. 注册事件 处理程序
+            btn.onclick = function() &#123;
+                // input.innerHTML = &#39;点击了&#39;;  这个是 普通盒子 比如 div 标签里面的内容
+                // 表单里面的值 文字内容是通过 value 来修改的
+                input.value = &#39;已提交&#39;;
+                // 如果想要某个表单被禁用 不能再点击 disabled  我们想要这个按钮 button禁用
+                // btn.disabled = true;
+                this.disabled = true;
+                // this 指向的是事件函数的调用者 btn
+            &#125;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 id="4、样式属性操作"><a href="#4、样式属性操作" class="headerlink" title="4、样式属性操作"></a>4、样式属性操作</h2><blockquote>
+<p>我们可以通过JS修改元素的大小、颜色、位置等样式</p>
+</blockquote>
+<h3 id="4-1-element-style"><a href="#4-1-element-style" class="headerlink" title="4.1 element.style"></a>4.1 element.style</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+            &lt;style&gt;
+                div &#123;
+                    width: 20px;
+                    height: 20px;
+                    background-color: pink;
+                &#125;
+            &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;script&gt;
+            // 1. 获取元素
+            var div = document.querySelector(&#39;div&#39;);
+            // 2. 注册事件 处理程序
+            div.onclick = function() &#123;
+                // div.style里面的属性 采取驼峰命名法 
+                this.style.backgroundColor = &#39;purple&#39;;
+                this.style.width = &#39;250px&#39;;
+                this.style.height = &#39;250px&#39;;
+            &#125;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="4-2-element-className-类名样式操作"><a href="#4-2-element-className-类名样式操作" class="headerlink" title="4.2 element.className 类名样式操作"></a>4.2 element.className 类名样式操作</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+            &lt;style&gt;
+                div &#123;
+                    width: 100px;
+                    height: 100px;
+                    background-color: pink;
+                &#125;
+
+                .change &#123;
+                    background-color: purple;
+                    color: #fff;
+                    font-size: 25px;
+                    margin-top: 100px;
+                &#125;
+            &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;first&quot;&gt;文本&lt;/div&gt;
+        &lt;script&gt;
+            // 1. 使用 element.style 获得修改元素样式  如果样式比较少 或者 功能简单的情况下使用
+            var test = document.querySelector(&#39;div&#39;);
+            test.onclick = function() &#123;
+                // this.style.backgroundColor = &#39;purple&#39;;
+                // this.style.color = &#39;#fff&#39;;
+                // this.style.fontSize = &#39;25px&#39;;
+                // this.style.marginTop = &#39;100px&#39;;
+
+                // 2. 我们可以通过 修改元素的className更改元素的样式 适合于样式较多或者功能复杂的情况
+                // 3. 如果想要保留原先的类名，我们可以这么做 多类名选择器
+                // this.className = &#39;change&#39;;
+                this.className = &#39;first change&#39;;
+            &#125;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>案例：密码框格式提示错误信息</li>
+</ul>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+            &lt;style&gt;
+                div &#123;
+                    width: 600px;
+                    margin: 100px auto;
+                &#125;
+
+                .message &#123;
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #999;
+                    background: url(images/mess.png) no-repeat left center;
+                    padding-left: 20px;
+                &#125;
+
+                .wrong &#123;
+                    color: red;
+                    background-image: url(images/wrong.png);
+                &#125;
+
+                .right &#123;
+                    color: green;
+                    background-image: url(images/right.png);
+                &#125;
+            &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;register&quot;&gt;
+            &lt;input type=&quot;password&quot; class=&quot;ipt&quot;&gt;
+            &lt;p class=&quot;message&quot;&gt;请输入6~16位密码&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+            // 首先判断的事件是表单失去焦点 onblur
+            // 如果输入正确则提示正确的信息颜色为绿色小图标变化
+            // 如果输入不是6到16位，则提示错误信息颜色为红色 小图标变化
+            // 因为里面变化样式较多，我们采取className修改样式
+            // 1.获取元素
+            var ipt = document.querySelector(&#39;.ipt&#39;);
+            var message = document.querySelector(&#39;.message&#39;);
+            //2. 注册事件 失去焦点
+            ipt.onblur = function() &#123;
+                // 根据表单里面值的长度 ipt.value.length
+                if (this.value.length &lt; 6 || this.value.length &gt; 16) &#123;
+                    // console.log(&#39;错误&#39;);
+                    message.className = &#39;message wrong&#39;;
+                    message.innerHTML = &#39;您输入的位数不对要求6~16位&#39;;
+                &#125; else &#123;
+                    message.className = &#39;message right&#39;;
+                    message.innerHTML = &#39;您输入的正确&#39;;
+                &#125;
+            &#125;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+  
+    </div> 
+
+    
+        <!-- Division Line -->
+        <div class="division"></div> 
+    
+
+    <div class="post-info-wrapper">
+            
+                    <!-- Post Info -->
+                    <p class="post-date">2021-04-29</p>
+                    
+                    
+                        <p class="post-info-categories">
+                            
+                        </p>
+                    
+
+                    
+            
+    </div>
+</article>
+
+
+    
+
+            </main>
+
+            <!-- 'To Top' Btn-->
+            
+                <div id="to-top">
+    <a href="#top" class="toTop">
+        <i class="fa fa-pagelines"></i>
+    </a>
+</div>
+            
+
+            <!-- Footer -->
+            
+                <footer class="footer-wrapper col-xs-12 col-sm-12">
+    <div class="footer-banner-wrapper">
+        <p class="footer-banner">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/" title="Hexo">Hexo</a></p>
+        <P class="footer-banner">Theme <a target="_blank" rel="noopener" href="https://github.com/Lonezj/hexo-theme-wind" title="Wind">wind</a></P>
+    </div>
+</footer>
+            
+        </div>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="/css/google-prettify-monokai.css" type="text/css">
+        <script src="//cdn.bootcss.com/prettify/r298/prettify.min.js" type="text/javascript"></script>
+    </body>
+</html>
