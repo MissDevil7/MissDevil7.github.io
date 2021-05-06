@@ -10,7 +10,7 @@
 
     <!-- Page Title -->
     
-        <title>初识Dom | Miss.Devil&#39;s hexo</title>
+        <title>Dom | Miss.Devil&#39;s hexo</title>
     
     <link rel="icon" href="/img/avatar-default.png">
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -56,7 +56,7 @@
         <p class="header-title">
              
                 
-                    初识Dom
+                    Dom
                 
             
         </p>  
@@ -93,7 +93,7 @@
     
         <!-- Article Catalog -->
         <div class="catalog-dropdown col-xs-12 col-sm-12">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">一、基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81DOM%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1、DOM概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81HTML-DOM%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text">2、HTML DOM树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%8A%82%E7%82%B9%E5%85%B3%E7%B3%BB"><span class="toc-number">1.3.</span> <span class="toc-text">3、节点关系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">获取元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A0%B9%E6%8D%AEID%E8%8E%B7%E5%8F%96"><span class="toc-number">2.1.</span> <span class="toc-text">1.根据ID获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E5%90%8D%E8%8E%B7%E5%8F%96"><span class="toc-number">2.2.</span> <span class="toc-text">2 根据标签名获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%80%9A%E8%BF%87HTML5%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95%E8%8E%B7%E5%8F%96"><span class="toc-number">2.3.</span> <span class="toc-text">3 通过HTML5新增方法获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%89%B9%E6%AE%8A%E5%85%83%E7%B4%A0%E8%8E%B7%E5%8F%96%EF%BC%88body-html%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">4 特殊元素获取（body,html）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">三、事件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%89%A7%E8%A1%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.1.</span> <span class="toc-text">1、执行事件的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%B8%B8%E8%A7%81%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2、常见的鼠标事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0"><span class="toc-number">4.</span> <span class="toc-text">三、操作元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="toc-number">4.1.</span> <span class="toc-text">1、改变元素内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-element-innerText"><span class="toc-number">4.1.1.</span> <span class="toc-text">1.1  element.innerText</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-element-innerHTML"><span class="toc-number">4.1.2.</span> <span class="toc-text">1.2 element.innerHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E8%8A%82%E7%82%B9"><span class="toc-number">4.1.3.</span> <span class="toc-text">1.3 添加新的节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%80%BB%E7%BB%93"><span class="toc-number">4.1.4.</span> <span class="toc-text">1.5 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E8%8A%82%E7%82%B9%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-number">4.1.5.</span> <span class="toc-text">1.4 删除某个节点元素：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text">2、其它常用元素的属性操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.3.</span> <span class="toc-text">3、表单元素的属性操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.</span> <span class="toc-text">4、样式属性操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-element-style"><span class="toc-number">4.4.1.</span> <span class="toc-text">4.1 element.style</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-element-className-%E7%B1%BB%E5%90%8D%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.2.</span> <span class="toc-text">4.2 element.className 类名样式操作</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">一、基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81DOM%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1、DOM概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81HTML-DOM%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text">2、HTML DOM树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%8A%82%E7%82%B9%E5%85%B3%E7%B3%BB"><span class="toc-number">1.3.</span> <span class="toc-text">3、节点关系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">二、获取元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A0%B9%E6%8D%AEID%E8%8E%B7%E5%8F%96"><span class="toc-number">2.1.</span> <span class="toc-text">1.根据ID获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E5%90%8D%E8%8E%B7%E5%8F%96"><span class="toc-number">2.2.</span> <span class="toc-text">2 根据标签名获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%80%9A%E8%BF%87HTML5%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95%E8%8E%B7%E5%8F%96"><span class="toc-number">2.3.</span> <span class="toc-text">3 通过HTML5新增方法获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%89%B9%E6%AE%8A%E5%85%83%E7%B4%A0%E8%8E%B7%E5%8F%96%EF%BC%88body-html%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">4 特殊元素获取（body,html）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">三、事件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%89%A7%E8%A1%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.1.</span> <span class="toc-text">1、执行事件的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%B8%B8%E8%A7%81%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2、常见的鼠标事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0"><span class="toc-number">4.</span> <span class="toc-text">三、操作元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="toc-number">4.1.</span> <span class="toc-text">1、改变元素内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-element-innerText"><span class="toc-number">4.1.1.</span> <span class="toc-text">1.1  element.innerText</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-element-innerHTML"><span class="toc-number">4.1.2.</span> <span class="toc-text">1.2 element.innerHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E8%8A%82%E7%82%B9"><span class="toc-number">4.1.3.</span> <span class="toc-text">1.3 添加新的节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%80%BB%E7%BB%93"><span class="toc-number">4.1.4.</span> <span class="toc-text">1.5 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E8%8A%82%E7%82%B9%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-number">4.1.5.</span> <span class="toc-text">1.4 删除某个节点元素：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text">2、其它常用元素的属性操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.3.</span> <span class="toc-text">3、表单元素的属性操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.</span> <span class="toc-text">4、样式属性操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-element-style"><span class="toc-number">4.4.1.</span> <span class="toc-text">4.1 element.style</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-element-className-%E7%B1%BB%E5%90%8D%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.2.</span> <span class="toc-text">4.2 element.className 类名样式操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text">四、自定义属性的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-number">5.1.</span> <span class="toc-text">1、获取属性值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-number">5.2.</span> <span class="toc-text">2、设置属性值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E7%A7%BB%E9%99%A4%E5%B1%9E%E6%80%A7"><span class="toc-number">5.3.</span> <span class="toc-text">3、移除属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%AE%9E%E4%BE%8B%E2%80%93tab%E6%A0%8F%E5%88%87%E6%8D%A2"><span class="toc-number">5.4.</span> <span class="toc-text">4、实例–tab栏切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81H5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-number">5.5.</span> <span class="toc-text">5、H5自定义属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E8%AE%BE%E7%BD%AEH5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-number">5.5.1.</span> <span class="toc-text">5.1 设置H5自定义属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E8%8E%B7%E5%8F%96H5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-number">5.5.2.</span> <span class="toc-text">5.2 获取H5自定义属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A"><span class="toc-number">5.5.3.</span> <span class="toc-text">例：</span></a></li></ol></li></ol></li></ol>
         </div>
     
 
@@ -143,7 +143,7 @@
 <p> 父（parent）、子（child）和同胞（sibling）等术语用于描述这些关系。父节点拥有子节点。同级的子节点被称为同胞（兄弟或姐妹）。</p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/20210429162859903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTU2NDMzNQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h1><p>① 根据ID获取</p>
+<h1 id="二、获取元素"><a href="#二、获取元素" class="headerlink" title="二、获取元素"></a>二、获取元素</h1><p>① 根据ID获取</p>
 <p>② 根据标签名获取</p>
 <p>③ 通过HTML5新增方法获取</p>
 <p>④ 特殊元素获取</p>
@@ -629,6 +629,219 @@
 &lt;/html&gt;
 
 </code></pre>
+<h1 id="四、自定义属性的操作"><a href="#四、自定义属性的操作" class="headerlink" title="四、自定义属性的操作"></a>四、自定义属性的操作</h1><h2 id="1、获取属性值"><a href="#1、获取属性值" class="headerlink" title="1、获取属性值"></a>1、获取属性值</h2><blockquote>
+<p>element.属性<br>element.getAttribute(‘属性’)</p>
+</blockquote>
+<p>区别：</p>
+<ul>
+<li>element.属性：只能获得元素本身自带的属性。</li>
+<li>element.getAttribute(‘属性’)：主要获得我们程序员自定义的属性。</li>
+</ul>
+<h2 id="2、设置属性值"><a href="#2、设置属性值" class="headerlink" title="2、设置属性值"></a>2、设置属性值</h2><blockquote>
+<p>element.属性=’值’<br>element.setAttribute(‘属性’)</p>
+</blockquote>
+<p>区别：</p>
+<ul>
+<li>element.属性=’值’：只能设置内置属性值</li>
+<li>element.setAttribute(‘属性’)：主要设置自定义的属性</li>
+</ul>
+<h2 id="3、移除属性"><a href="#3、移除属性" class="headerlink" title="3、移除属性"></a>3、移除属性</h2><blockquote>
+<p>element.removeAttribute(‘属性’)</p>
+</blockquote>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;demo&quot; index=&quot;1&quot; class=&quot;nav&quot;&gt;&lt;/div&gt;
+        &lt;script&gt;
+            var div = document.querySelector(&#39;div&#39;);
+            // 1. 获取元素的属性值
+            // (1) element.属性
+            console.log(div.id);// demo
+            console.log(div.index);// undefined
+            console.log(div.class);// undifined
+            console.log(div.className);// nav
+            //(2) element.getAttribute(&#39;属性&#39;)
+            console.log(div.getAttribute(&#39;id&#39;));// demo
+            console.log(div.getAttribute(&#39;index&#39;));// 1
+            console.log(div.getAttribute(&#39;class&#39;));// nav
+            console.log(div.getAttribute(&#39;className&#39;));// null
+            // 2. 设置元素属性值
+            // (1) element.属性= &#39;值&#39; 
+            div.id = &#39;test&#39;;// test
+            div.index = &#39;2&#39;;// 1
+            // (2) element.setAttribute(&#39;属性&#39;, &#39;值&#39;);  主要针对于自定义属性
+            div.setAttribute(&#39;id&#39;, &#39;demo&#39;);// demo
+            div.setAttribute(&#39;index&#39;, 2);// 2
+            div.setAttribute(&#39;class&#39;, &#39;footer&#39;); //class 特殊这里面写的就是class 不是className
+
+            console.log(div.getAttribute(&#39;class&#39;));// footer
+            console.log(div.getAttribute(&#39;className&#39;));// null
+            console.log(div.class);// undifined
+            console.log(div.className);// footer
+            // 3 移除属性 removeAttribute(&#39;属性&#39;)    
+            div.removeAttribute(&#39;index&#39;);
+            div.removeAttribute(&#39;id&#39;);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 id="4、实例–tab栏切换"><a href="#4、实例–tab栏切换" class="headerlink" title="4、实例–tab栏切换"></a>4、实例–tab栏切换</h2><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style&gt;
+            * &#123;
+                margin: 0;
+                padding: 0;
+            &#125;
+
+            li &#123;
+                list-style-type: none;
+            &#125;
+
+            .tab &#123;
+                width: 978px;
+                margin: 100px auto;
+            &#125;
+
+            .tab_list &#123;
+                height: 39px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+            &#125;
+
+            .tab_list li &#123;
+                float: left;
+                height: 39px;
+                line-height: 39px;
+                padding: 0 20px;
+                text-align: center;
+                cursor: pointer;
+            &#125;
+
+            .tab_list .current &#123;
+                background-color: #c81623;
+                color: #fff;
+            &#125;
+
+            .item_info &#123;
+                padding: 20px 0 0 20px;
+            &#125;
+
+            .item &#123;
+                display: none;
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;tab&quot;&gt;
+            &lt;div class=&quot;tab_list&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li class=&quot;current&quot;&gt;商品介绍&lt;/li&gt;
+                    &lt;li&gt;规格与包装&lt;/li&gt;
+                    &lt;li&gt;售后保障&lt;/li&gt;
+                    &lt;li&gt;商品评价（50000）&lt;/li&gt;
+                    &lt;li&gt;手机社区&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;tab_con&quot;&gt;
+                &lt;div class=&quot;item&quot; style=&quot;display: block;&quot;&gt;
+                    商品介绍模块内容
+                &lt;/div&gt;
+                &lt;div class=&quot;item&quot;&gt;
+                    规格与包装模块内容
+                &lt;/div&gt;
+                &lt;div class=&quot;item&quot;&gt;
+                    售后保障模块内容
+                &lt;/div&gt;
+                &lt;div class=&quot;item&quot;&gt;
+                    商品评价（50000）模块内容
+                &lt;/div&gt;
+                &lt;div class=&quot;item&quot;&gt;
+                    手机社区模块内容
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+            // 获取元素
+            var tab_list = document.querySelector(&#39;.tab_list&#39;);
+            var lis = tab_list.querySelectorAll(&#39;li&#39;);
+            var items = document.querySelectorAll(&#39;.item&#39;);
+            // for循环绑定点击事件
+            for (var i = 0; i &lt; lis.length; i++) &#123;
+                // 开始给5个小li 设置索引号 
+                lis[i].setAttribute(&#39;index&#39;, i);
+                lis[i].onclick = function() &#123;
+                    // 1. 上的模块选项卡，点击某一个，当前这一个底色会是红色，其余不变（排他思想） 修改类名的方式
+                    // 干掉所有人 其余的li清除 class 这个类
+                    for (var i = 0; i &lt; lis.length; i++) &#123;
+                        lis[i].className = &#39;&#39;;
+                    &#125;
+                    // 留下我自己 
+                    this.className = &#39;current&#39;;
+                    // 2. 下面的显示内容模块
+                    var index = this.getAttribute(&#39;index&#39;);
+                    console.log(index);
+                    // 干掉所有人 让其余的item 这些div 隐藏
+                    for (var i = 0; i &lt; items.length; i++) &#123;
+                        items[i].style.display = &#39;none&#39;;
+                    &#125;
+                    // 留下我自己 让对应的item 显示出来
+                    items[index].style.display = &#39;block&#39;;
+                &#125;
+            &#125;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="5、H5自定义属性"><a href="#5、H5自定义属性" class="headerlink" title="5、H5自定义属性"></a>5、H5自定义属性</h2><blockquote>
+<p>自定义属性的目的：是为了保存并使用数据。有些数据可以保存在页面不用保存在数据库中。</p>
+</blockquote>
+<h3 id="5-1-设置H5自定义属性"><a href="#5-1-设置H5自定义属性" class="headerlink" title="5.1 设置H5自定义属性"></a>5.1 设置H5自定义属性</h3><p>H5规定自定义属性</p>
+<blockquote>
+<p>data-开头做为属性名并且赋值  data-index = “1”<br>或者使用JS设置<br>element.setAttribute(‘data-index’,1);</p>
+</blockquote>
+<h3 id="5-2-获取H5自定义属性"><a href="#5-2-获取H5自定义属性" class="headerlink" title="5.2 获取H5自定义属性"></a>5.2 获取H5自定义属性</h3><p>H5新增 </p>
+<blockquote>
+<p>element.dataset.index<br>element.dataset[‘index’]<br>js获取<br>element.getAttribute(‘data-index’)</p>
+</blockquote>
+<h3 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no,
+        initial-sale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;/&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div getTime=&quot;20&quot; data-index=&quot;2&quot; data-list-name=&quot;andy&quot;&gt;&lt;/div&gt;
+        &lt;script&gt;
+            var div = document.querySelector(&#39;div&#39;);
+            // console.log(div.getTime);// undefinde
+            console.log(div.getAttribute(&#39;getTime&#39;));//20
+            div.setAttribute(&#39;data-time&#39;, 20);
+            console.log(div.getAttribute(&#39;data-index&#39;));//2
+            console.log(div.getAttribute(&#39;data-list-name&#39;));//andy
+            // h5新增的获取自定义属性的方法 它只能获取data-开头的
+            // dataset 是一个集合里面存放了所有以data开头的自定义属性
+            console.log(div.dataset);
+            console.log(div.dataset.index);//2
+            console.log(div.dataset[&#39;index&#39;]);//2
+            // 如果自定义属性里面有多个-链接的单词，我们获取的时候采取 驼峰命名法
+            console.log(div.dataset.listName);//andy
+            console.log(div.dataset[&#39;listName&#39;]);//andy
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
   
     </div> 
 
